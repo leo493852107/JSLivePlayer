@@ -5,9 +5,11 @@ target 'JSLivePlayer' do
 
 	pod 'AFNetworking'
 	pod 'BarrageRenderer'
-	pod 'GPUImage'
+
 	pod 'LFLiveKit'
 	pod 'SDWebImage'
-	pod 'MJExtension'
+	pod 'YYModel'
+
+	pod 'BmobSDK'
 
 end

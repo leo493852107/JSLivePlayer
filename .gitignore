@@ -5,6 +5,9 @@
 ## Build generated
 build/
 DerivedData/
+/Pods
+
+/JSLivePlayer/Classes/ThirdLib
 
 ## Various settings
 *.pbxuser
@@ -20,6 +23,7 @@ xcuserdata/
 ## Other
 *.moved-aside
 *.xcuserstate
+
 
 ## Obj-C/Swift specific
 *.hmap

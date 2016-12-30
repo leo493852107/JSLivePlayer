@@ -1,0 +1,22 @@
+//
+//  JSLivePlayer.pch
+//  JSLivePlayer
+//
+//  Created by leo on 24/11/2016.
+//  Copyright © 2016 leo. All rights reserved.
+//
+
+#ifndef JSLivePlayer_pch
+#define JSLivePlayer_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import <objc/runtime.h>
+#import "UIView+JSExtension.h"
+#import <BmobSDK/Bmob.h>
+
+#define JSScreenWidth [UIScreen mainScreen].bounds.size.width
+#define JSScreenHeight [UIScreen mainScreen].bounds.size.height
+
+#endif /* JSLivePlayer_pch */

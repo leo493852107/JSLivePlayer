@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "JSRootTabViewController.h"
+
 
 @interface AppDelegate ()
 
@@ -16,7 +18,14 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    [Bmob registerWithAppKey:@"e22f1be95ee7577e4618ada4ef4638ad"];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    JSRootTabViewController *rootTabVC = [[JSRootTabViewController alloc] init];
+    self.window.rootViewController = rootTabVC;
+    [self.window makeKeyWindow];
+    
     return YES;
 }
 
