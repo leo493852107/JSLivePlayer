@@ -30,7 +30,7 @@ static NSString * const ID = @"cell";
 
 - (UITableView *)hotTableView {
     if (_hotTableView == nil) {
-        _hotTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, JSScreenWidth, JSScreenHeight-64-49) style:UITableViewStylePlain];
+        _hotTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, JSScreenWidth, JSScreenHeight-49) style:UITableViewStylePlain];
         _hotTableView.delegate = self;
         _hotTableView.dataSource = self;
         _hotTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -41,12 +41,6 @@ static NSString * const ID = @"cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-//    self.hotTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, JSScreenWidth, JSScreenHeight-64-49) style:UITableViewStylePlain];
-//    self.hotTableView.delegate = self;
-//    self.hotTableView.dataSource = self;
-//    self.hotTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-//    [self.view addSubview:self.hotTableView];
     
     _hotArray = [NSMutableArray arrayWithCapacity:5];
     

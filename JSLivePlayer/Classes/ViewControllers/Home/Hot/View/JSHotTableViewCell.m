@@ -23,13 +23,15 @@
 
 @implementation JSHotTableViewCell
 
+
 - (void)setModel:(JSHotRoomModel *)model {
     _model = model;
     
     NSURL *imageUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@", model.creator.portrait]];
-
+    
     // 头像
     [self.headImgView sd_setImageWithURL:imageUrl];
+    
     // 城市
     if (model.city.length == 0) {
         _addressLabel.text = @"难道在火星?";
