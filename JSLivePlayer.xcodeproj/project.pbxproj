@@ -70,6 +70,7 @@
 		B3B18FD71DE6A2BB0064F362 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B18FD11DE6A2BB0064F362 /* AppDelegate.m */; };
 		B3B196491DE6ABEB0064F362 /* UIView+JSExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B196481DE6ABEB0064F362 /* UIView+JSExtension.m */; };
 		B3B9AD1E1E1E71EF0057CEEF /* JSLiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B9AD1D1E1E71EF0057CEEF /* JSLiveViewController.m */; };
+		B3B9AD261E1E81DB0057CEEF /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3B9AD251E1E81DB0057CEEF /* IJKMediaFramework.framework */; };
 		F02F905F596DC2D7E3B1AA06 /* libPods-JSLivePlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BB77D613D797108A3455342 /* libPods-JSLivePlayer.a */; };
 /* End PBXBuildFile section */
 
@@ -159,6 +160,7 @@
 		B3B196541DE6C7C30064F362 /* JSLivePlayer.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSLivePlayer.pch; sourceTree = "<group>"; };
 		B3B9AD1C1E1E71EF0057CEEF /* JSLiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSLiveViewController.h; sourceTree = "<group>"; };
 		B3B9AD1D1E1E71EF0057CEEF /* JSLiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSLiveViewController.m; sourceTree = "<group>"; };
+		B3B9AD251E1E81DB0057CEEF /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F02F905F596DC2D7E3B1AA06 /* libPods-JSLivePlayer.a in Frameworks */,
+				B3B9AD261E1E81DB0057CEEF /* IJKMediaFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +478,7 @@
 		B3B18FD61DE6A2BB0064F362 /* ThirdLib */ = {
 			isa = PBXGroup;
 			children = (
+				B3B9AD251E1E81DB0057CEEF /* IJKMediaFramework.framework */,
 			);
 			path = ThirdLib;
 			sourceTree = "<group>";

@@ -7,7 +7,7 @@ build/
 DerivedData/
 /Pods
 
-/JSLivePlayer/Classes/ThirdLib
+/JSLivePlayer/Classes/ThirdLib/IJKMediaFramework.framework
 
 ## Various settings
 *.pbxuser
