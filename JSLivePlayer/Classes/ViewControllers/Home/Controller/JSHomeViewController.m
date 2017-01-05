@@ -12,6 +12,7 @@
 #import "JSHotTableViewCell.h"
 #import <AFNetworking.h>
 #import <YYModel.h>
+#import "JSLiveViewController.h"
 
 @interface JSHomeViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -98,6 +99,14 @@ static NSString * const ID = @"cell";
 }
 
 #pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    JSLiveViewController *liveVC = [[JSLiveViewController alloc] init];
+    liveVC.roomModel = _hotArray[indexPath.row];
+    
+    [self presentViewController:liveVC animated:YES completion:nil];
+}
+
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 430;
 }

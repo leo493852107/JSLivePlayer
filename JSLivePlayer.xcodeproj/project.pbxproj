@@ -69,6 +69,7 @@
 		B3B18FC81DE5AA040064F362 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3B18FC61DE5AA040064F362 /* LaunchScreen.storyboard */; };
 		B3B18FD71DE6A2BB0064F362 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B18FD11DE6A2BB0064F362 /* AppDelegate.m */; };
 		B3B196491DE6ABEB0064F362 /* UIView+JSExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B196481DE6ABEB0064F362 /* UIView+JSExtension.m */; };
+		B3B9AD1E1E1E71EF0057CEEF /* JSLiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B9AD1D1E1E71EF0057CEEF /* JSLiveViewController.m */; };
 		F02F905F596DC2D7E3B1AA06 /* libPods-JSLivePlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BB77D613D797108A3455342 /* libPods-JSLivePlayer.a */; };
 /* End PBXBuildFile section */
 
@@ -156,6 +157,8 @@
 		B3B196501DE6C52B0064F362 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		B3B196521DE6C5350064F362 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B3B196541DE6C7C30064F362 /* JSLivePlayer.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSLivePlayer.pch; sourceTree = "<group>"; };
+		B3B9AD1C1E1E71EF0057CEEF /* JSLiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSLiveViewController.h; sourceTree = "<group>"; };
+		B3B9AD1D1E1E71EF0057CEEF /* JSLiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSLiveViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -363,6 +366,8 @@
 			children = (
 				B3AC6B6A1DFBC748008F9482 /* JSHomeViewController.h */,
 				B3AC6B6B1DFBC748008F9482 /* JSHomeViewController.m */,
+				B3B9AD1C1E1E71EF0057CEEF /* JSLiveViewController.h */,
+				B3B9AD1D1E1E71EF0057CEEF /* JSLiveViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -660,6 +665,7 @@
 				B3AC6AE51DFADCBC008F9482 /* JSBaseViewController.m in Sources */,
 				B3AC6B851DFBEC05008F9482 /* JSHotTableViewCell.m in Sources */,
 				B3AC6AFD1DFB996E008F9482 /* JSHotRoomViewController.m in Sources */,
+				B3B9AD1E1E1E71EF0057CEEF /* JSLiveViewController.m in Sources */,
 				B3B18FD71DE6A2BB0064F362 /* AppDelegate.m in Sources */,
 				B3AC6AE81DFB9437008F9482 /* JSBaseNavigationController.m in Sources */,
 				B3B18FBA1DE5AA040064F362 /* main.m in Sources */,
