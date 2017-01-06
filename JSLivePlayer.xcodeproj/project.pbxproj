@@ -71,6 +71,9 @@
 		B3B196491DE6ABEB0064F362 /* UIView+JSExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B196481DE6ABEB0064F362 /* UIView+JSExtension.m */; };
 		B3B9AD1E1E1E71EF0057CEEF /* JSLiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B9AD1D1E1E71EF0057CEEF /* JSLiveViewController.m */; };
 		B3B9AD261E1E81DB0057CEEF /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3B9AD251E1E81DB0057CEEF /* IJKMediaFramework.framework */; };
+		B3B9AD2D1E1F863A0057CEEF /* mg_room_btn_guan_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B9AD2B1E1F863A0057CEEF /* mg_room_btn_guan_h@2x.png */; };
+		B3B9AD2E1E1F863A0057CEEF /* mg_room_btn_guan_h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B9AD2C1E1F863A0057CEEF /* mg_room_btn_guan_h@3x.png */; };
+		B3B9AD311E1F8B180057CEEF /* JSHeartFlyView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B9AD301E1F8B180057CEEF /* JSHeartFlyView.m */; };
 		F02F905F596DC2D7E3B1AA06 /* libPods-JSLivePlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BB77D613D797108A3455342 /* libPods-JSLivePlayer.a */; };
 /* End PBXBuildFile section */
 
@@ -161,6 +164,10 @@
 		B3B9AD1C1E1E71EF0057CEEF /* JSLiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSLiveViewController.h; sourceTree = "<group>"; };
 		B3B9AD1D1E1E71EF0057CEEF /* JSLiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSLiveViewController.m; sourceTree = "<group>"; };
 		B3B9AD251E1E81DB0057CEEF /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
+		B3B9AD2B1E1F863A0057CEEF /* mg_room_btn_guan_h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mg_room_btn_guan_h@2x.png"; sourceTree = "<group>"; };
+		B3B9AD2C1E1F863A0057CEEF /* mg_room_btn_guan_h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mg_room_btn_guan_h@3x.png"; sourceTree = "<group>"; };
+		B3B9AD2F1E1F8B180057CEEF /* JSHeartFlyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSHeartFlyView.h; sourceTree = "<group>"; };
+		B3B9AD301E1F8B180057CEEF /* JSHeartFlyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSHeartFlyView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +296,7 @@
 		B3AC6B051DFBADF5008F9482 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				B3B9AD2A1E1F863A0057CEEF /* ExitBtn */,
 				B3AC6B061DFBBE44008F9482 /* Refresh */,
 				B3AC6B241DFBBE44008F9482 /* Tabbar */,
 				B3AC6B331DFBBE44008F9482 /* Video */,
@@ -385,6 +393,8 @@
 		B3AC6B691DFBC724008F9482 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B3B9AD2F1E1F8B180057CEEF /* JSHeartFlyView.h */,
+				B3B9AD301E1F8B180057CEEF /* JSHeartFlyView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -492,6 +502,15 @@
 			path = Categories;
 			sourceTree = "<group>";
 		};
+		B3B9AD2A1E1F863A0057CEEF /* ExitBtn */ = {
+			isa = PBXGroup;
+			children = (
+				B3B9AD2B1E1F863A0057CEEF /* mg_room_btn_guan_h@2x.png */,
+				B3B9AD2C1E1F863A0057CEEF /* mg_room_btn_guan_h@3x.png */,
+			);
+			path = ExitBtn;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -581,6 +600,7 @@
 				B3AC6B591DFBBE44008F9482 /* tab_live_ipad@2x.png in Resources */,
 				B3AC6B471DFBBE44008F9482 /* refresh_fly_0016.png in Resources */,
 				B3AC6B561DFBBE44008F9482 /* tab_launch@3x.png in Resources */,
+				B3B9AD2E1E1F863A0057CEEF /* mg_room_btn_guan_h@3x.png in Resources */,
 				B3AC6B521DFBBE44008F9482 /* refresh_fly_0027.png in Resources */,
 				B3AC6B401DFBBE44008F9482 /* refresh_fly_0009.png in Resources */,
 				B3AC6B4B1DFBBE44008F9482 /* refresh_fly_0020.png in Resources */,
@@ -597,6 +617,7 @@
 				B3AC6B5E1DFBBE44008F9482 /* tab_me@3x.png in Resources */,
 				B3B18FC31DE5AA040064F362 /* Main.storyboard in Resources */,
 				B3AC6B4D1DFBBE44008F9482 /* refresh_fly_0022.png in Resources */,
+				B3B9AD2D1E1F863A0057CEEF /* mg_room_btn_guan_h@2x.png in Resources */,
 				B3AC6B391DFBBE44008F9482 /* refresh_fly_0002.png in Resources */,
 				B3AC6B491DFBBE44008F9482 /* refresh_fly_0018.png in Resources */,
 				B3AC6B4E1DFBBE44008F9482 /* refresh_fly_0023.png in Resources */,
@@ -675,6 +696,7 @@
 				B3B18FBA1DE5AA040064F362 /* main.m in Sources */,
 				B3AC6ADE1DFADAB4008F9482 /* JSRootTabViewController.m in Sources */,
 				B3AC6B721DFBCACD008F9482 /* JSMineViewController.m in Sources */,
+				B3B9AD311E1F8B180057CEEF /* JSHeartFlyView.m in Sources */,
 				B3AC6B6C1DFBC748008F9482 /* JSHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,17 +10,19 @@
 #import <IJKMediaFramework/IJKMediaFramework.h>
 #import "JSHotRoomModel.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "JSHeartFlyView.h"
 
 @interface JSLiveViewController ()
 
 /** imgView */
 @property (nonatomic, strong) UIImageView *imgView;
-
 /** exitBtn */
 @property (nonatomic, strong) UIButton *exitBtn;
-
 /** player */
 @property (nonatomic, strong) IJKFFMoviePlayerController *player;
+
+@property (nonatomic, assign)CGFloat heartSize;
+@property (nonatomic)NSTimer *splashTimer;
 
 @end
 
@@ -29,6 +31,7 @@
 - (UIImageView *)imgView {
     if (_imgView == nil) {
         _imgView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+        _imgView.contentMode = UIViewContentModeScaleAspectFill;
         [self.view addSubview:_imgView];
     }
     return _imgView;
@@ -37,12 +40,8 @@
 - (UIButton *)exitBtn {
     if (_exitBtn == nil) {
         _exitBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_exitBtn setImage:[UIImage imageNamed:@"mg_room_btn_guan_h"] forState:UIControlStateNormal];
         _exitBtn.frame = CGRectMake(JSScreenWidth-50, JSScreenHeight-50, 50, 50);
-        _exitBtn.layer.cornerRadius = _exitBtn.frame.size.height/2;
-        [_exitBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-        [_exitBtn setTitle:@"退出" forState:UIControlStateNormal];
-        [_exitBtn setTitle:@"退出" forState:UIControlStateSelected];
-        _exitBtn.backgroundColor = [UIColor groupTableViewBackgroundColor];
         [_exitBtn addTarget:self action:@selector(exitPlay:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:_exitBtn];
     }
@@ -72,10 +71,27 @@
     [self.view insertSubview:self.player.view atIndex:1];
     [self.view bringSubviewToFront:self.exitBtn];
     
+    self.splashTimer = [NSTimer scheduledTimerWithTimeInterval:0.1  target:self selector:@selector(rote) userInfo:nil repeats:YES];
+    
+}
+
+-(void)rote{
+    
+    _heartSize = 35;
+    
+    JSHeartFlyView* heart = [[JSHeartFlyView alloc]initWithFrame:CGRectMake(0, 0, 50, 50)];
+    [self.view addSubview:heart];
+    CGPoint fountainSource = CGPointMake(JSScreenWidth-_heartSize, self.view.bounds.size.height - _heartSize/2.0 - 10);
+    heart.center = fountainSource;
+    [heart animateInView:self.view];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
+    
+    if ([self.splashTimer isValid]) {
+        self.splashTimer = nil;
+    }
     
     // 界面消失，一定要记得停止播放
     [_player pause];

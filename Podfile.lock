@@ -17,6 +17,7 @@ PODS:
   - BarrageRenderer (1.9.0)
   - BmobSDK (1.7.2)
   - LFLiveKit (2.3)
+  - MJRefresh (3.1.12)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
@@ -27,6 +28,7 @@ DEPENDENCIES:
   - BarrageRenderer
   - BmobSDK
   - LFLiveKit
+  - MJRefresh
   - SDWebImage
   - YYModel
 
@@ -35,9 +37,10 @@ SPEC CHECKSUMS:
   BarrageRenderer: a5b54aef34eed1eab48f35ed594082ae446947c9
   BmobSDK: e188cb31d6a8417ab668aee821da227d7512b865
   LFLiveKit: 76a5cb34509f8cbe25e3a95824cf80f36d36679b
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   SDWebImage: '098e97e6176540799c27e804c96653ee0833d13c'
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 5cecfab3d00ff9a542d3a8e042c4ff08413ffaca
+PODFILE CHECKSUM: 8bafd62ada0d291b8fc560dc4238034ccc3e94ad
 
 COCOAPODS: 1.1.1

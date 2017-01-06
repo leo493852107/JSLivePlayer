@@ -12,6 +12,7 @@
 #import "JSHotTableViewCell.h"
 #import <AFNetworking.h>
 #import <YYModel.h>
+#import <MJRefresh.h>
 #import "JSLiveViewController.h"
 
 @interface JSHomeViewController () <UITableViewDelegate, UITableViewDataSource>
@@ -43,22 +44,23 @@ static NSString * const ID = @"cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.title = @"首页";
     _hotArray = [NSMutableArray arrayWithCapacity:5];
     
     [self.hotTableView registerNib:[UINib nibWithNibName:@"JSHotTableViewCell" bundle:nil] forCellReuseIdentifier:ID];
     
+    _hotTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadData)];
+    [_hotTableView.mj_header beginRefreshing];
+    
     // 加载数据
     [self loadData];
-    
-    
-    
     
     
 }
 
 - (void)loadData {
     NSString *urlStr = @"http://116.211.167.106/api/live/simpleall";
-    
+    [_hotArray removeAllObjects];
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/plain", nil];
@@ -74,11 +76,12 @@ static NSString * const ID = @"cell";
             [_hotArray addObject:hot];
         }
         
-        
+        [_hotTableView.mj_header endRefreshing];
         [_hotTableView reloadData];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@", error);
+        [_hotTableView.mj_header endRefreshing];
     }];
     
 }
@@ -94,6 +97,7 @@ static NSString * const ID = @"cell";
     if (cell == nil) {
         cell = [[JSHotTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
     }
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     cell.model = _hotArray[indexPath.row];
     return cell;
 }
