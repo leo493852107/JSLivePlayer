@@ -7,13 +7,14 @@
 //
 
 #import "JSHomeViewController.h"
-#import "JSHotRoomViewController.h"
-#import "JSHotRoomModel.h"
-#import "JSHotTableViewCell.h"
-#import <AFNetworking.h>
-#import <YYModel.h>
+
+#import "LiveModel.h"
+#import "JSHomeTableViewCell.h"
+#import "JSNetworkManager.h"
 #import <MJRefresh.h>
+#import <MJExtension.h>
 #import "JSLiveViewController.h"
+#import "JSAnimationHeader.h"
 
 @interface JSHomeViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -47,9 +48,13 @@ static NSString * const ID = @"cell";
     self.navigationItem.title = @"首页";
     _hotArray = [NSMutableArray arrayWithCapacity:5];
     
-    [self.hotTableView registerNib:[UINib nibWithNibName:@"JSHotTableViewCell" bundle:nil] forCellReuseIdentifier:ID];
+    [self.hotTableView registerNib:[UINib nibWithNibName:@"JSHomeTableViewCell" bundle:nil] forCellReuseIdentifier:ID];
     
-    _hotTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadData)];
+    JSAnimationHeader *header = [JSAnimationHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadData)];
+    // 隐藏 更新时间和状态
+    header.lastUpdatedTimeLabel.hidden = YES;
+    header.stateLabel.hidden = YES;
+    _hotTableView.mj_header = header;
     [_hotTableView.mj_header beginRefreshing];
     
     // 加载数据
@@ -58,29 +63,20 @@ static NSString * const ID = @"cell";
     
 }
 
+#pragma mark - 上拉刷新
 - (void)loadData {
     NSString *urlStr = @"http://116.211.167.106/api/live/simpleall";
-    [_hotArray removeAllObjects];
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/plain", nil];
-    [manager GET:urlStr parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSDictionary *dicAll = responseObject;
+    
+    [[JSNetworkManager shareNetworkManager] GET:urlStr parameters:nil success:^(id responseObject) {
+        [_hotArray removeAllObjects];
         
-        NSArray *array = [dicAll objectForKey:@"lives"];
-        
-        for (NSDictionary *dic in array) {
-            
-            JSHotRoomModel *hot = [JSHotRoomModel yy_modelWithJSON:dic];
-            
-            [_hotArray addObject:hot];
-        }
+        self.hotArray = [LiveModel mj_objectArrayWithKeyValuesArray:responseObject[@"lives"]];
         
         [_hotTableView.mj_header endRefreshing];
         [_hotTableView reloadData];
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"%@", error);
+
+    } failure:^(NSError *error) {
+        JSLog(@"%@", error);
         [_hotTableView.mj_header endRefreshing];
     }];
     
@@ -93,12 +89,12 @@ static NSString * const ID = @"cell";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    JSHotTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (cell == nil) {
-        cell = [[JSHotTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-    }
+
+    JSHomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     cell.model = _hotArray[indexPath.row];
+    
     return cell;
 }
 
@@ -106,13 +102,17 @@ static NSString * const ID = @"cell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     JSLiveViewController *liveVC = [[JSLiveViewController alloc] init];
     liveVC.roomModel = _hotArray[indexPath.row];
-    
     [self presentViewController:liveVC animated:YES completion:nil];
 }
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 430;
+}
+
+- (void)dealloc {
+    self.hotTableView.dataSource = nil;
+    self.hotTableView.delegate = nil;
 }
 
 - (void)didReceiveMemoryWarning {

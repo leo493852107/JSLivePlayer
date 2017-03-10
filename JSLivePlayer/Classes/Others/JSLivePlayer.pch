@@ -14,7 +14,13 @@
 
 #import <objc/runtime.h>
 #import "UIView+JSExtension.h"
-#import <BmobSDK/Bmob.h>
+
+#ifdef DEBUG // 处于开发阶段
+#define JSLog(...) NSLog(__VA_ARGS__)
+#else // 处于发布阶段
+#define JSLog(...)
+#endif
+
 
 #define JSScreenWidth [UIScreen mainScreen].bounds.size.width
 #define JSScreenHeight [UIScreen mainScreen].bounds.size.height

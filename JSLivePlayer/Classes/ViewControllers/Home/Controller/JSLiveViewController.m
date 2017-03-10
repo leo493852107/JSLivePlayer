@@ -8,9 +8,9 @@
 
 #import "JSLiveViewController.h"
 #import <IJKMediaFramework/IJKMediaFramework.h>
-#import "JSHotRoomModel.h"
+#import "LiveModel.h"
 #import <SDWebImage/UIImageView+WebCache.h>
-#import "JSHeartFlyView.h"
+#import "DMHeartFlyView.h"
 
 @interface JSLiveViewController ()
 
@@ -79,7 +79,7 @@
     
     _heartSize = 35;
     
-    JSHeartFlyView* heart = [[JSHeartFlyView alloc]initWithFrame:CGRectMake(0, 0, 50, 50)];
+    DMHeartFlyView* heart = [[DMHeartFlyView alloc]initWithFrame:CGRectMake(0, 0, 50, 50)];
     [self.view addSubview:heart];
     CGPoint fountainSource = CGPointMake(JSScreenWidth-_heartSize, self.view.bounds.size.height - _heartSize/2.0 - 10);
     heart.center = fountainSource;

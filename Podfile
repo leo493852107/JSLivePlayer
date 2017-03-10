@@ -8,8 +8,10 @@ target 'JSLivePlayer' do
 
 	pod 'LFLiveKit'
 	pod 'SDWebImage'
-	pod 'YYModel'
+	pod 'MJExtension'
 	pod 'MJRefresh'
-	pod 'BmobSDK'
+	pod 'LFLiveKit'
+
+
 
 end

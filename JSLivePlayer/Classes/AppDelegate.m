@@ -19,7 +19,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [Bmob registerWithAppKey:@"e22f1be95ee7577e4618ada4ef4638ad"];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     JSRootTabViewController *rootTabVC = [[JSRootTabViewController alloc] init];
