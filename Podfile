@@ -11,6 +11,7 @@ target 'JSLivePlayer' do
 	pod 'MJExtension'
 	pod 'MJRefresh'
 	pod 'LFLiveKit'
+    pod 'Masonry'
 
 
 
