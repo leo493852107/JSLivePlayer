@@ -204,7 +204,6 @@
 		B3B18F4F1E728B3600D8219C /* yipitiezhi09.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B18EC51E728B3600D8219C /* yipitiezhi09.png */; };
 		B3B18F751E729CED00D8219C /* JSAnchorView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B18F741E729CED00D8219C /* JSAnchorView.m */; };
 		B3B18F781E72B46D00D8219C /* JSBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B18F771E72B46D00D8219C /* JSBottomView.m */; };
-		B3B18F8E1E739C4300D8219C /* JSDanmuLaunchView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B18F8D1E739C4300D8219C /* JSDanmuLaunchView.m */; };
 		B3B18F931E73A27200D8219C /* JSPresentView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B18F921E73A27200D8219C /* JSPresentView.m */; };
 		B3B18F961E73C3D600D8219C /* JSSendGiftView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B18F951E73C3D600D8219C /* JSSendGiftView.m */; };
 		B3B18F9A1E73CC0900D8219C /* refresh_fly_0014.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B18F991E73CC0900D8219C /* refresh_fly_0014.png */; };
@@ -240,6 +239,9 @@
 		B3B18FE41E755E5000D8219C /* TYViewStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B18FDA1E755E5000D8219C /* TYViewStorage.m */; };
 		B3B18FE81E75607400D8219C /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B18FE71E75607400D8219C /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B3B18FEA1E7564F500D8219C /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B3B18FE91E7564F500D8219C /* libicucore.tbd */; };
+		B3B18FF81E75710E00D8219C /* DanmuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B18FF31E75710E00D8219C /* DanmuItem.m */; };
+		B3B18FF91E75710E00D8219C /* DanmuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B18FF51E75710E00D8219C /* DanmuItemView.m */; };
+		B3B18FFA1E75710E00D8219C /* DanmuLaunchView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B18FF71E75710E00D8219C /* DanmuLaunchView.m */; };
 		B3B196491DE6ABEB0064F362 /* UIView+JSExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B196481DE6ABEB0064F362 /* UIView+JSExtension.m */; };
 		B3B9AD1E1E1E71EF0057CEEF /* JSLiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B9AD1D1E1E71EF0057CEEF /* JSLiveViewController.m */; };
 		B3B9AD261E1E81DB0057CEEF /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3B9AD251E1E81DB0057CEEF /* IJKMediaFramework.framework */; };
@@ -461,8 +463,6 @@
 		B3B18F741E729CED00D8219C /* JSAnchorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSAnchorView.m; sourceTree = "<group>"; };
 		B3B18F761E72B46D00D8219C /* JSBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSBottomView.h; sourceTree = "<group>"; };
 		B3B18F771E72B46D00D8219C /* JSBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSBottomView.m; sourceTree = "<group>"; };
-		B3B18F8C1E739C4300D8219C /* JSDanmuLaunchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSDanmuLaunchView.h; sourceTree = "<group>"; };
-		B3B18F8D1E739C4300D8219C /* JSDanmuLaunchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSDanmuLaunchView.m; sourceTree = "<group>"; };
 		B3B18F911E73A27200D8219C /* JSPresentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSPresentView.h; sourceTree = "<group>"; };
 		B3B18F921E73A27200D8219C /* JSPresentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSPresentView.m; sourceTree = "<group>"; };
 		B3B18F941E73C3D600D8219C /* JSSendGiftView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSSendGiftView.h; sourceTree = "<group>"; };
@@ -519,6 +519,12 @@
 		B3B18FE61E75607400D8219C /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
 		B3B18FE71E75607400D8219C /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
 		B3B18FE91E7564F500D8219C /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		B3B18FF21E75710E00D8219C /* DanmuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanmuItem.h; sourceTree = "<group>"; };
+		B3B18FF31E75710E00D8219C /* DanmuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanmuItem.m; sourceTree = "<group>"; };
+		B3B18FF41E75710E00D8219C /* DanmuItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanmuItemView.h; sourceTree = "<group>"; };
+		B3B18FF51E75710E00D8219C /* DanmuItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanmuItemView.m; sourceTree = "<group>"; };
+		B3B18FF61E75710E00D8219C /* DanmuLaunchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanmuLaunchView.h; sourceTree = "<group>"; };
+		B3B18FF71E75710E00D8219C /* DanmuLaunchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanmuLaunchView.m; sourceTree = "<group>"; };
 		B3B196471DE6ABEB0064F362 /* UIView+JSExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JSExtension.h"; sourceTree = "<group>"; };
 		B3B196481DE6ABEB0064F362 /* UIView+JSExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JSExtension.m"; sourceTree = "<group>"; };
 		B3B1964A1DE6C4FF0064F362 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
@@ -584,7 +590,6 @@
 		B3AC6AE11DFADCA3008F9482 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				B3B18F821E72C34000D8219C /* View */,
 				B3B18D181E6E7C7500D8219C /* JSRootTabViewController.h */,
 				B3B18D191E6E7C7500D8219C /* JSRootTabViewController.m */,
 				B3AC6AE31DFADCBC008F9482 /* JSBaseViewController.h */,
@@ -912,18 +917,10 @@
 			path = images;
 			sourceTree = "<group>";
 		};
-		B3B18F821E72C34000D8219C /* View */ = {
-			isa = PBXGroup;
-			children = (
-				B3B18F8C1E739C4300D8219C /* JSDanmuLaunchView.h */,
-				B3B18F8D1E739C4300D8219C /* JSDanmuLaunchView.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		B3B18F8F1E73A25900D8219C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B3B18FF11E75710E00D8219C /* Danmu */,
 				B3B18F9F1E73EBFB00D8219C /* TablkPannel */,
 				B3B18F901E73A25900D8219C /* Present */,
 			);
@@ -1097,6 +1094,19 @@
 				B3B18FE71E75607400D8219C /* RegexKitLite.m */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		B3B18FF11E75710E00D8219C /* Danmu */ = {
+			isa = PBXGroup;
+			children = (
+				B3B18FF21E75710E00D8219C /* DanmuItem.h */,
+				B3B18FF31E75710E00D8219C /* DanmuItem.m */,
+				B3B18FF41E75710E00D8219C /* DanmuItemView.h */,
+				B3B18FF51E75710E00D8219C /* DanmuItemView.m */,
+				B3B18FF61E75710E00D8219C /* DanmuLaunchView.h */,
+				B3B18FF71E75710E00D8219C /* DanmuLaunchView.m */,
+			);
+			path = Danmu;
 			sourceTree = "<group>";
 		};
 		B3B196461DE6AB6D0064F362 /* Categories */ = {
@@ -1456,12 +1466,13 @@
 				B3B18F781E72B46D00D8219C /* JSBottomView.m in Sources */,
 				B3B18FE11E755E5000D8219C /* TYTextContainer+Extended.m in Sources */,
 				B3B18E3A1E727AA900D8219C /* JSNetworkManager.m in Sources */,
-				B3B18F8E1E739C4300D8219C /* JSDanmuLaunchView.m in Sources */,
 				B3B18FE01E755E5000D8219C /* TYLinkTextStorage.m in Sources */,
 				B3B18FE31E755E5000D8219C /* TYTextStorage.m in Sources */,
 				B3B9AD1E1E1E71EF0057CEEF /* JSLiveViewController.m in Sources */,
 				B3B18FC21E755C5D00D8219C /* JSMessageModel.m in Sources */,
+				B3B18FF81E75710E00D8219C /* DanmuItem.m in Sources */,
 				B3B18FD71DE6A2BB0064F362 /* AppDelegate.m in Sources */,
+				B3B18FF91E75710E00D8219C /* DanmuItemView.m in Sources */,
 				B3B18E361E7183D000D8219C /* JSAnimationHeader.m in Sources */,
 				B3B18FA91E73EBFB00D8219C /* JSMessageTableView.m in Sources */,
 				B3B18FDD1E755E5000D8219C /* TYDrawStorage.m in Sources */,
@@ -1474,6 +1485,7 @@
 				B3B18FA71E73EBFB00D8219C /* JSCustomSwitch.m in Sources */,
 				B3AC6B721DFBCACD008F9482 /* JSMineViewController.m in Sources */,
 				B3AC6B6C1DFBC748008F9482 /* JSHomeViewController.m in Sources */,
+				B3B18FFA1E75710E00D8219C /* DanmuLaunchView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -24,9 +24,10 @@
 #import "JSBottomView.h"
 #import "JSMessageTableView.h"
 #import "JSKeyBoardInputView.h"
-#import "JSDanmuLaunchView.h"
+#import "DanmuLaunchView.h"
 #import "JSPresentView.h"
 #import "JSSendGiftView.h"
+#import "DanmuItem.h"
 
 @interface JSLiveViewController () <JSKeyBoardInputViewDelegate, JSPresentViewDelegate>
 
@@ -43,6 +44,11 @@
 @property (nonatomic, strong) IJKFFMoviePlayerController *player;
 
 @property (nonatomic, assign)CGFloat heartSize;
+
+/** <#desc#> */
+@property (nonatomic, copy) NSString *nickName;
+/** <#desc#> */
+@property (nonatomic, copy) NSString *userIcon;
 //@property (nonatomic)NSTimer *splashTimer;
 
 @end
@@ -57,9 +63,46 @@
     if (message.length == 0) {
         return;
     }
+    if (danmu) {
+        // 发送弹幕消息 + 普通消息
+        if (self.danmuView) {
+            DanmuItem *item = [[DanmuItem alloc] init];
+            item.u_userID = @"three id";
+            item.u_nickName = self.nickName;
+            item.thumUrl = self.userIcon;
+            item.content = message;
+            [self.danmuView setModel:item];
+            
+            JSMessageModel *model = [[JSMessageModel alloc] init];
+            [model setModel:@"guestID" withName:self.nickName withIcon:self.userIcon withType:CellNewChatMessageType withMessage:message];
+            [self.messageTableView sendMessage:model];
+            
+//            if (self.guestKit) {
+//                [self.guestKit SendBarrage:self.nickName andCustomHeader:self.userIcon andContent:message];
+//            }
+        }
+    } else {
+        // 发送普通消息
+        JSMessageModel *model = [[JSMessageModel alloc] init];
+        [model setModel:@"guestID" withName:self.nickName withIcon:self.userIcon withType:CellNewChatMessageType withMessage:message];
+        [self.messageTableView sendMessage:model];
+        
+//        if (self.guestKit) {
+//            [self.guestKit SendUserMsg:self.nickName andCustomHeader:self.userIcon andContent:message];
+//        }
+        
+    }
+
 }
 
 #pragma mark - 懒加载
+- (NSString *)nickName {
+    if (!_nickName) {
+        _nickName = @"游客A";
+    }
+    return _nickName;
+}
+
 - (JSSendGiftView *)giftView {
     if (!_giftView) {
         _giftView = [[JSSendGiftView alloc] initWithFrame:self.view.bounds];
@@ -76,9 +119,9 @@
     return _presentView;
 }
 
-- (JSDanmuLaunchView *)danmuView {
+- (DanmuLaunchView *)danmuView {
     if (!_danmuView) {
-        _danmuView = [[JSDanmuLaunchView alloc] initWithFrame:CGRectMake(0, CGRectGetMinY(self.messageTableView.frame)-(ItemHeight*3+ItemSpace*2), self.view.frame.size.width, ItemHeight*3+ItemSpace*2)];
+        _danmuView = [[DanmuLaunchView alloc] initWithFrame:CGRectMake(0, CGRectGetMinY(self.messageTableView.frame)-(ItemHeight*3+ItemSpace*2), self.view.frame.size.width, ItemHeight*3+ItemSpace*2)];
     }
     return _danmuView;
 }
@@ -213,7 +256,7 @@
     
 }
 
-#pragma mark - 点击屏幕发送爱心
+#pragma mark - 点击屏幕发送爱心及键盘退出
 - (void)tapEvent:(UITapGestureRecognizer *)recognizer {
     _heartSize = 35;
     
@@ -222,6 +265,18 @@
     CGPoint fountainSource = CGPointMake(JSScreenWidth-_heartSize, self.view.bounds.size.height - _heartSize/2.0 - 10);
     heart.center = fountainSource;
     [heart animateInView:self.view];
+    
+    
+    CGPoint point = [recognizer locationInView:self.view];
+    CGRect rect = [self.view convertRect:self.keyBoardInputView.frame toView:self.view];
+    if (CGRectContainsPoint(rect, point)) {
+        //
+    } else {
+        if (self.keyBoardInputView.isEdit) {
+            [self.keyBoardInputView endEditTextField];
+        }
+    }
+    
     
 }
 
@@ -263,7 +318,7 @@
     
     [self createUI];
     
-    
+    [self prepareToPlay];
 //    // 拉流地址
 //    NSURL *streamUrl = [NSURL URLWithString:self.roomModel.stream_addr];
 //    
@@ -277,6 +332,20 @@
 //    
 //    self.splashTimer = [NSTimer scheduledTimerWithTimeInterval:0.1  target:self selector:@selector(rote) userInfo:nil repeats:YES];
     
+}
+
+- (void)prepareToPlay {
+    // 拉流地址
+    NSURL *streamUrl = [NSURL URLWithString:self.liveModel.stream_addr];
+
+    // 创建IJKFFMoviePlayerController：专门用来直播，传入拉流地址就好了
+    self.player = [[IJKFFMoviePlayerController alloc] initWithContentURL:streamUrl withOptions:nil];
+    self.player.view.frame = [UIScreen mainScreen].bounds;
+    // 准备播放
+    [self.player prepareToPlay];
+    [self.showView addSubview:self.player.view];
+    
+//    [self.view insertSubview:self.player.view atIndex:1];
 }
 
 #pragma mark - 初始化UI
@@ -297,7 +366,7 @@
     [self.topView addSubview:self.presentView];
     
     
-//    [self.view addSubview:self.danmuView];
+    [self.view addSubview:self.danmuView];
     
     
     [self.exitBtn mas_makeConstraints:^(MASConstraintMaker *make) {

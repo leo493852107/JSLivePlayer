@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TYAttributedLabel.h"
+
+@class JSMessageModel;
 
 @interface JSMessageCell : UITableViewCell
+
+/** <#desc#> */
+@property (nonatomic, weak, readonly) TYAttributedLabel *label;
+/** <#desc#> */
+@property (nonatomic, strong) JSMessageModel *model;
 
 @end

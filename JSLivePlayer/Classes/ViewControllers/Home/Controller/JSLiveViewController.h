@@ -8,7 +8,7 @@
 
 #import "JSBaseViewController.h"
 
-@class JSAnchorView, JSBottomView, JSMessageTableView, JSKeyBoardInputView, JSDanmuLaunchView, JSPresentView, JSSendGiftView;
+@class JSAnchorView, JSBottomView, JSMessageTableView, JSKeyBoardInputView, JSPresentView, JSSendGiftView, DanmuLaunchView;
 @class LiveModel;
 @interface JSLiveViewController : JSBaseViewController
 
@@ -22,7 +22,7 @@
 /** 聊天面板 */
 @property (nonatomic, strong) JSMessageTableView *messageTableView;
 /** 弹幕 */
-@property (nonatomic, strong) JSDanmuLaunchView *danmuView;
+@property (nonatomic, strong) DanmuLaunchView *danmuView;
 /** 显示连击动画区域 */
 @property (nonatomic, strong) JSPresentView *presentView;
 /** 礼物栏 */
