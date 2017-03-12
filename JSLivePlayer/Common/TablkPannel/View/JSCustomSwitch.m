@@ -120,7 +120,7 @@
     self.backgroundImageView.backgroundColor = JSRGBColor(47, 207, 111);
     self.titleLabel.textColor = JSRGBColor(47, 207, 111);
     
-    leftConstranint.constant = 2;
+    leftConstranint.constant = self.frame.size.width*beishu-2;
     
     if (animation) {
         [UIView animateWithDuration:0.1 animations:^{
