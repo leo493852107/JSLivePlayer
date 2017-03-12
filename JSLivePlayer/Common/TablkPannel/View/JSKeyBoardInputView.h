@@ -35,7 +35,7 @@ typedef NS_ENUM(NSInteger, KeyboardInputViewType) {
 @interface JSKeyBoardInputView : UIView
 
 /** 是否编辑 */
-@property (nonatomic, assign, getter=isEditing) BOOL editing;
+@property (nonatomic, assign) BOOL isEdit;
 
 
 /** delegate */

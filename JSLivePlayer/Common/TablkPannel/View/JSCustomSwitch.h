@@ -12,12 +12,16 @@
 
 @required
 - (void)customSwitchOn;
-
+- (void)customSwitchOff;
 
 @end
 
 @interface JSCustomSwitch : UIView
 
+/** 是否开弹幕 */
+@property (nonatomic, assign, getter=isOn) BOOL on;
+
+- (void)setOn:(BOOL)on animated:(BOOL)animated;
 
 /** delegate */
 @property (nonatomic, copy) id<JSCustomSwitchDelegate> delegate;

@@ -49,12 +49,59 @@
 
 @implementation JSKeyBoardInputView
 
+- (void)beginEditTextField {
+    if (self.textField.isFirstResponder) {
+        return;
+    }
+    self.isEdit = YES;
+    [self.textField becomeFirstResponder];
+}
+
+- (void)endEditTextField {
+    if (self.textField.isFirstResponder) {
+        self.isEdit = NO;
+        [self.textField resignFirstResponder];
+    }
+}
+
+#pragma mark - 自定义弹幕开关代理 JSCustomSwitchDelegate
+- (void)customSwitchOn {
+    self.danmu = YES;
+    if (_delegate && [_delegate respondsToSelector:@selector(keyBoardDanmuOpen)]) {
+        [_delegate keyBoardDanmuOpen];
+    }
+}
+
+- (void)customSwitchOff {
+    self.danmu = NO;
+    if (_delegate && [_delegate respondsToSelector:@selector(keyBoardDanmuClose)]) {
+        [_delegate keyBoardDanmuClose];
+    }
+}
+
+#pragma mark - UITextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (_delegate && [_delegate respondsToSelector:@selector(keyBoardSendMessage:withDanmu:)]) {
+        [_delegate keyBoardSendMessage:_textField.text withDanmu:_danmu];
+    }
+    _textField.text = @"";
+    return YES;
+}
+
+#pragma mark - 点击发送按钮触发点击事件
+- (void)sendButtonEvent {
+    if (_delegate && [_delegate respondsToSelector:@selector(keyBoardSendMessage:withDanmu:)]) {
+        [_delegate keyBoardSendMessage:_textField.text withDanmu:_danmu];
+    }
+    _textField.text = @"";
+}
+
 
 - (instancetype)initWithStyle:(KeyboardInputViewType)type {
     self = [super init];
     if (self) {
         showType = type;
-        
+        [self initLayout];
     }
     return self;
 }
@@ -81,7 +128,7 @@
         _sendButton.titleLabel.font = [UIFont systemFontOfSize:14];
         _sendButton.backgroundColor = JSSendButtonColor;
         [_sendButton setTitle:@"发送" forState:UIControlStateNormal];
-        [_sendButton addTarget:self action:@selector(sendButtonEvent:) forControlEvents:UIControlEventTouchUpInside];
+        [_sendButton addTarget:self action:@selector(sendButtonEvent) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_sendButton];
         
         [_customSwitch mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -124,7 +171,7 @@
         _sendButton.titleLabel.font = [UIFont systemFontOfSize:14];
         _sendButton.backgroundColor = JSSendButtonColor;
         [_sendButton setTitle:@"发送" forState:UIControlStateNormal];
-        [_sendButton addTarget:self action:@selector(sendButtonEvent:) forControlEvents:UIControlEventTouchUpInside];
+        [_sendButton addTarget:self action:@selector(sendButtonEvent) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_sendButton];
         
 //        [_customSwitch mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -152,8 +199,5 @@
     }
 }
 
-- (void)sendButtonEvent:(UIButton*)sedner {
-    
-}
 
 @end

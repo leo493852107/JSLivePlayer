@@ -94,20 +94,37 @@
     if (!_bottomView) {
         _bottomView = [[JSBottomView alloc] initWithFrame:CGRectMake(0, JSScreenHeight - 64, JSScreenWidth, 64)];
         __weak typeof(self)weakSelf = self;
-        [_bottomView setButtonClick:^(NSInteger tag) {
-            switch (tag) {
-                case 100:
-                    //发送消息/弹幕
-                    
-                {
-                    
-                }
-                    break;
-                    
-                default:
-                    break;
-            }
+        
+        JSLog(@"%s-----3", __func__);
+        // 添加点击事件
+        [_bottomView addTapBlock:^(UIButton *button) {
+            // 在视图控制器中调用button的block方法
+            JSLog(@"%s-----6", __func__);
+            JSLog(@"按钮被点击了---6");
         }];
+        
+//        [_bottomView setButtonClick:^(NSInteger tag) {
+//            switch (tag) {
+//                case 100:
+//                    // 发送消息/弹幕
+//                {
+//                    if (weakSelf.keyBoardInputView) {
+//                        [weakSelf.keyBoardInputView beginEditTextField];
+//                    }
+//                }
+//                    break;
+//                case 101:
+//                    // 礼物
+//                {
+//                    
+//                }
+//                    break;
+//                    
+//                default:
+//                    break;
+//            }
+//        }];
+        
     }
     return _bottomView;
 }
@@ -252,12 +269,13 @@
     [self.view addSubview:self.anchorView];
     // 底部工具条
     [self.topView addSubview:self.bottomView];
-    [self.topView addSubview:self.keyBoardInputView];
-    [self.topView addSubview:self.messageTableView];
+//    
+//    [self.topView addSubview:self.keyBoardInputView];
+//    [self.topView addSubview:self.messageTableView];
 //    [self.topView addSubview:self.presentView];
     
     
-    [self.view addSubview:self.danmuView];
+//    [self.view addSubview:self.danmuView];
     
     
     [self.exitBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -270,6 +288,10 @@
     [self registerForKeyboardChangeNotifications];
     
     __weak typeof(self)weakSelf = self;
+    // 送礼物
+//    [self.giftView setGiftClick:^(NSInteger tag) {
+//        [weakSelf ]
+//    }]
     // 底部工具栏
     [self.giftView setGrayClick:^{
         [weakSelf showBottomTools];
@@ -277,7 +299,7 @@
     
 }
 
-
+#pragma mark - 底部工具栏
 //显示工具栏
 - (void)showBottomTools {
     // position 图层中心点位置
@@ -285,8 +307,26 @@
     animation.duration = 0.5f;
     animation.removedOnCompletion = NO;
     animation.fillMode = kCAFillModeForwards;
-    animation.toValue = [NSValue valueWithCGPoint:CGPointMake(JSScreenWidth/2, JSScreenHeight+32)];
+    animation.toValue = [NSValue valueWithCGPoint:CGPointMake(JSScreenWidth/2, JSScreenHeight-32)];
     [self.bottomView.layer addAnimation:animation forKey:@"positionShow"];
+}
+
+// 隐藏工具栏
+- (void)hideBottomTools {
+    // position 图层中心点位置
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"position"];
+    animation.duration = 0.3f;
+    animation.removedOnCompletion = NO;
+    animation.fillMode = kCAFillModeForwards;
+    animation.toValue = [NSValue valueWithCGPoint:CGPointMake(JSScreenWidth/2, JSScreenHeight+32)];
+    [self.bottomView.layer addAnimation:animation forKey:@"positionHide"];
+    [self performSelector:@selector(popShowGiftView) withObject:nil afterDelay:0.5];
+    
+}
+
+//显示送礼物界面
+- (void)popShowGiftView {
+    
 }
 
 -(void)rote{
