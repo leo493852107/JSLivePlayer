@@ -43,11 +43,21 @@
 @property (nonatomic, strong) IJKFFMoviePlayerController *player;
 
 @property (nonatomic, assign)CGFloat heartSize;
-@property (nonatomic)NSTimer *splashTimer;
+//@property (nonatomic)NSTimer *splashTimer;
 
 @end
 
-@implementation JSLiveViewController
+@implementation JSLiveViewController {
+    UITapGestureRecognizer *tapGesture;
+}
+
+
+#pragma mark - JSKeyBoardInputViewDelegate
+- (void)keyBoardSendMessage:(NSString *)message withDanmu:(BOOL)danmu {
+    if (message.length == 0) {
+        return;
+    }
+}
 
 #pragma mark - 懒加载
 - (JSSendGiftView *)giftView {
@@ -95,35 +105,30 @@
         _bottomView = [[JSBottomView alloc] initWithFrame:CGRectMake(0, JSScreenHeight - 64, JSScreenWidth, 64)];
         __weak typeof(self)weakSelf = self;
         
-        JSLog(@"%s-----3", __func__);
         // 添加点击事件
-        [_bottomView addTapBlock:^(UIButton *button) {
+        [_bottomView setButtonClick:^(NSInteger tag) {
+            
             // 在视图控制器中调用button的block方法
-            JSLog(@"%s-----6", __func__);
-            JSLog(@"按钮被点击了---6");
+            switch (tag) {
+                case 100:
+                    // 发送消息/弹幕
+                {
+                    if (weakSelf.keyBoardInputView) {
+                        [weakSelf.keyBoardInputView beginEditTextField];
+                    }
+                }
+                    break;
+                case 101:
+                    // 礼物
+                {
+                    
+                }
+                    break;
+                    
+                default:
+                    break;
+            }
         }];
-        
-//        [_bottomView setButtonClick:^(NSInteger tag) {
-//            switch (tag) {
-//                case 100:
-//                    // 发送消息/弹幕
-//                {
-//                    if (weakSelf.keyBoardInputView) {
-//                        [weakSelf.keyBoardInputView beginEditTextField];
-//                    }
-//                }
-//                    break;
-//                case 101:
-//                    // 礼物
-//                {
-//                    
-//                }
-//                    break;
-//                    
-//                default:
-//                    break;
-//            }
-//        }];
         
     }
     return _bottomView;
@@ -202,6 +207,22 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     
+    // 爱心
+    tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapEvent:)];
+    [self.view addGestureRecognizer:tapGesture];
+    
+}
+
+#pragma mark - 点击屏幕发送爱心
+- (void)tapEvent:(UITapGestureRecognizer *)recognizer {
+    _heartSize = 35;
+    
+    DMHeartFlyView* heart = [[DMHeartFlyView alloc]initWithFrame:CGRectMake(0, 0, 50, 50)];
+    [self.view addSubview:heart];
+    CGPoint fountainSource = CGPointMake(JSScreenWidth-_heartSize, self.view.bounds.size.height - _heartSize/2.0 - 10);
+    heart.center = fountainSource;
+    [heart animateInView:self.view];
+    
 }
 
 // 键盘弹起
@@ -269,10 +290,11 @@
     [self.view addSubview:self.anchorView];
     // 底部工具条
     [self.topView addSubview:self.bottomView];
-//    
-//    [self.topView addSubview:self.keyBoardInputView];
-//    [self.topView addSubview:self.messageTableView];
-//    [self.topView addSubview:self.presentView];
+    // 键盘输入
+    [self.topView addSubview:self.keyBoardInputView];
+    //
+    [self.topView addSubview:self.messageTableView];
+    [self.topView addSubview:self.presentView];
     
     
 //    [self.view addSubview:self.danmuView];
@@ -329,28 +351,21 @@
     
 }
 
--(void)rote{
-    
-    _heartSize = 35;
-    
-    DMHeartFlyView* heart = [[DMHeartFlyView alloc]initWithFrame:CGRectMake(0, 0, 50, 50)];
-    [self.view addSubview:heart];
-    CGPoint fountainSource = CGPointMake(JSScreenWidth-_heartSize, self.view.bounds.size.height - _heartSize/2.0 - 10);
-    heart.center = fountainSource;
-    [heart animateInView:self.view];
-}
-
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
-    if ([self.splashTimer isValid]) {
-        self.splashTimer = nil;
-    }
+//    if ([self.splashTimer isValid]) {
+//        self.splashTimer = nil;
+//    }
     
     // 界面消失，一定要记得停止播放
     [_player pause];
     [_player stop];
     [_player shutdown];
+}
+
+- (void)dealloc {
+    self.keyBoardInputView.delegate = nil;
 }
 
 - (void)didReceiveMemoryWarning {

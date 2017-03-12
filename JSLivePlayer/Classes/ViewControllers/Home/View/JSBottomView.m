@@ -29,11 +29,7 @@
     for (NSInteger i = 0; i < self.imageArray.count; i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         [button setImage:[UIImage imageNamed:self.imageArray[i]] forState:UIControlStateNormal];
-//        [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
-        
-        JSLog(@"%s-----1", __func__);
-        [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
-        JSLog(@"%s-----2", __func__);
+        [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
 
         button.tag = 100 + i;
         if (i == 0) {
@@ -46,25 +42,26 @@
 }
 
 
-- (void)addTapBlock:(ButtonBlock)block {
-    JSLog(@"%s-----4", __func__);
-    _block = block;
-    
-}
-
-
-// 重写button的点击事件的方法
-- (void)buttonAction:(UIButton *)button {
-    JSLog(@"%s---5", __func__);
-    _block(button);
-}
-
-
-
-
-//- (void)buttonClick:(id)sender {
+//- (void)addTapBlock:(ButtonBlock)block {
+//    JSLog(@"%s-----4", __func__);
+//    _block = block;
 //    
 //}
+//
+//
+//// 重写button的点击事件的方法
+//- (void)buttonAction:(UIButton *)button {
+//    JSLog(@"%s---5", __func__);
+//    _block(button);
+//}
+
+
+- (void)buttonClick:(id)sender {
+    UIButton *tagButton = (UIButton *)sender;
+    if (self.buttonClick) {
+        self.buttonClick(tagButton.tag);
+    }
+}
 
 #pragma mark - 懒加载
 - (NSArray *)imageArray {

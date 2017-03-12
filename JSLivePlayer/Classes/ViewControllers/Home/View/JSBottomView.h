@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^ButtonBlock)(UIButton *);
+//typedef void(^ButtonBlock)(UIButton *);
 
 
 @interface JSBottomView : UIView
@@ -21,14 +21,12 @@ typedef void(^ButtonBlock)(UIButton *);
 @property (nonatomic, strong) UIButton *shareButton;
 
 
-/** <#desc#> */
-//@property (nonatomic, copy) void (^buttonClick)(NSInteger tag);
 
-//@property (nonatomic, copy) buttonClick block1;
+@property (nonatomic, copy) void (^buttonClick)(NSInteger tag);
 
 /** <#desc#> */
-@property (nonatomic, copy) ButtonBlock block;
-
-- (void)addTapBlock:(ButtonBlock)block;
+//@property (nonatomic, copy) ButtonBlock block;
+//
+//- (void)addTapBlock:(ButtonBlock)block;
 
 @end

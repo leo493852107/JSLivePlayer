@@ -24,6 +24,6 @@
 - (void)setOn:(BOOL)on animated:(BOOL)animated;
 
 /** delegate */
-@property (nonatomic, copy) id<JSCustomSwitchDelegate> delegate;
+@property (nonatomic, weak) id<JSCustomSwitchDelegate> delegate;
 
 @end

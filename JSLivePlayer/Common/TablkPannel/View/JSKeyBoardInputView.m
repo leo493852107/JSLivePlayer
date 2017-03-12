@@ -42,7 +42,8 @@
 /** sendButton */
 @property (nonatomic, strong) UIButton *sendButton;
 /** 是否是弹幕 */
-@property (nonatomic, assign, getter=isDanmu) BOOL danmu;
+@property (nonatomic, assign) BOOL danmu;
+//@property (nonatomic, assign, getter=isDanmu) BOOL danmu;
 
 
 @end
@@ -138,20 +139,21 @@
             make.width.equalTo(_customSwitch.mas_height).multipliedBy(1.65);
         }];
         
+        [_textField mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(_customSwitch.mas_right).offset(BetweenSpace);
+            make.top.equalTo(self.mas_top).offset(UpDownSpace);
+            make.bottom.equalTo(self.mas_bottom).offset(-UpDownSpace);
+            make.right.equalTo(_sendButton.mas_left).offset(-BetweenSpace);
+            
+        }];
         [_sendButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.equalTo(self.mas_right).offset(0);
             make.top.equalTo(self.mas_top).offset(UpDownSpace);
             make.bottom.equalTo(self.mas_bottom).offset(-UpDownSpace);
             make.width.equalTo(_customSwitch.mas_width);
         }];
-        
-        [_textField mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(_customSwitch.mas_right).offset(BetweenSpace);
-            make.top.equalTo(self.mas_top).offset(UpDownSpace);
-            make.bottom.equalTo(self.mas_bottom).offset(-UpDownSpace);
-            make.right.equalTo(_sendButton.mas_left).offset(-BetweenSpace);
-        }];
-    } else {
+
+    } else if (showType == KeyBoardInputViewTypeDanMu) {
         // 弹幕
 //        _customSwitch = [[JSCustomSwitch alloc] init];
 //        _customSwitch.delegate = self;
@@ -182,7 +184,7 @@
 //        }];
         
         [_textField mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.mas_right).offset(BetweenSpace);
+            make.left.equalTo(self.mas_left).offset(BetweenSpace);
             make.top.equalTo(self.mas_top).offset(UpDownSpace);
             make.bottom.equalTo(self.mas_bottom).offset(-UpDownSpace);
             make.right.equalTo(_sendButton.mas_left).offset(-BetweenSpace);

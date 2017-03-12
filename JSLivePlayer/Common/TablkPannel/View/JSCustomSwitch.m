@@ -60,6 +60,9 @@
     self.onOffImageView.backgroundColor = [UIColor whiteColor];
     self.onOffImageView.layer.cornerRadius = 3;
     [self addSubview:self.onOffImageView];
+    // !!!一定要加上 translatesAutoresizingMaskIntoConstraints = NO;
+    // Note that the autoresizing mask constraints fully specify the view’s size and position; therefore, you cannot add additional constraints to modify this size or position without introducing conflicts. If you want to use Auto Layout to dynamically calculate the size and position of your view, you must set this property to NO, and then provide a non ambiguous, nonconflicting set of constraints for the view.
+    self.onOffImageView.translatesAutoresizingMaskIntoConstraints = NO;
     
     NSLayoutConstraint *one1 = [NSLayoutConstraint constraintWithItem:self.onOffImageView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1.0 constant:2.0];
     leftConstranint = one1;

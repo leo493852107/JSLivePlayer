@@ -17,7 +17,7 @@
 @interface JSPresentView : UIView
 
 /** <#desc#> */
-@property (nonatomic, copy) id<JSPresentViewDelegate> delegate;
+@property (nonatomic, weak) id<JSPresentViewDelegate> delegate;
 
 
 @end
