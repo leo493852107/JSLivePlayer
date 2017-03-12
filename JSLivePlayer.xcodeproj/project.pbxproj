@@ -222,10 +222,24 @@
 		B3B18FBC1E74DA4600D8219C /* mg_room_btn_liao_h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B18FB21E74DA4600D8219C /* mg_room_btn_liao_h@3x.png */; };
 		B3B18FBD1E74DA4600D8219C /* mg_room_btn_liwu_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B18FB31E74DA4600D8219C /* mg_room_btn_liwu_h@2x.png */; };
 		B3B18FBE1E74DA4600D8219C /* mg_room_btn_liwu_h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B18FB41E74DA4600D8219C /* mg_room_btn_liwu_h@3x.png */; };
+		B3B18FC21E755C5D00D8219C /* JSMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B18FC11E755C5D00D8219C /* JSMessageModel.m */; };
 		B3B18FC31DE5AA040064F362 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3B18FC11DE5AA040064F362 /* Main.storyboard */; };
 		B3B18FC51DE5AA040064F362 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3B18FC41DE5AA040064F362 /* Assets.xcassets */; };
+		B3B18FC51E755C7800D8219C /* JSMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B18FC41E755C7800D8219C /* JSMessageCell.m */; };
 		B3B18FC81DE5AA040064F362 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3B18FC61DE5AA040064F362 /* LaunchScreen.storyboard */; };
 		B3B18FD71DE6A2BB0064F362 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B18FD11DE6A2BB0064F362 /* AppDelegate.m */; };
+		B3B18FDB1E755E5000D8219C /* NSMutableAttributedString+TY.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B18FC81E755E5000D8219C /* NSMutableAttributedString+TY.m */; };
+		B3B18FDC1E755E5000D8219C /* TYAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B18FCA1E755E5000D8219C /* TYAttributedLabel.m */; };
+		B3B18FDD1E755E5000D8219C /* TYDrawStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B18FCC1E755E5000D8219C /* TYDrawStorage.m */; };
+		B3B18FDE1E755E5000D8219C /* TYImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B18FCE1E755E5000D8219C /* TYImageCache.m */; };
+		B3B18FDF1E755E5000D8219C /* TYImageStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B18FD01E755E5000D8219C /* TYImageStorage.m */; };
+		B3B18FE01E755E5000D8219C /* TYLinkTextStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B18FD21E755E5000D8219C /* TYLinkTextStorage.m */; };
+		B3B18FE11E755E5000D8219C /* TYTextContainer+Extended.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B18FD31E755E5000D8219C /* TYTextContainer+Extended.m */; };
+		B3B18FE21E755E5000D8219C /* TYTextContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B18FD51E755E5000D8219C /* TYTextContainer.m */; };
+		B3B18FE31E755E5000D8219C /* TYTextStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B18FD71E755E5000D8219C /* TYTextStorage.m */; };
+		B3B18FE41E755E5000D8219C /* TYViewStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B18FDA1E755E5000D8219C /* TYViewStorage.m */; };
+		B3B18FE81E75607400D8219C /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B18FE71E75607400D8219C /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B3B18FEA1E7564F500D8219C /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B3B18FE91E7564F500D8219C /* libicucore.tbd */; };
 		B3B196491DE6ABEB0064F362 /* UIView+JSExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B196481DE6ABEB0064F362 /* UIView+JSExtension.m */; };
 		B3B9AD1E1E1E71EF0057CEEF /* JSLiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B9AD1D1E1E71EF0057CEEF /* JSLiveViewController.m */; };
 		B3B9AD261E1E81DB0057CEEF /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3B9AD251E1E81DB0057CEEF /* IJKMediaFramework.framework */; };
@@ -472,12 +486,39 @@
 		B3B18FB41E74DA4600D8219C /* mg_room_btn_liwu_h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mg_room_btn_liwu_h@3x.png"; sourceTree = "<group>"; };
 		B3B18FB51DE5AA040064F362 /* JSLivePlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSLivePlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3B18FB91DE5AA040064F362 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B3B18FC01E755C5D00D8219C /* JSMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSMessageModel.h; sourceTree = "<group>"; };
+		B3B18FC11E755C5D00D8219C /* JSMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSMessageModel.m; sourceTree = "<group>"; };
 		B3B18FC21DE5AA040064F362 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B3B18FC31E755C7800D8219C /* JSMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSMessageCell.h; sourceTree = "<group>"; };
 		B3B18FC41DE5AA040064F362 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B3B18FC41E755C7800D8219C /* JSMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSMessageCell.m; sourceTree = "<group>"; };
 		B3B18FC71DE5AA040064F362 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B3B18FC71E755E5000D8219C /* NSMutableAttributedString+TY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+TY.h"; sourceTree = "<group>"; };
+		B3B18FC81E755E5000D8219C /* NSMutableAttributedString+TY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+TY.m"; sourceTree = "<group>"; };
 		B3B18FC91DE5AA040064F362 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3B18FC91E755E5000D8219C /* TYAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYAttributedLabel.h; sourceTree = "<group>"; };
+		B3B18FCA1E755E5000D8219C /* TYAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYAttributedLabel.m; sourceTree = "<group>"; };
+		B3B18FCB1E755E5000D8219C /* TYDrawStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYDrawStorage.h; sourceTree = "<group>"; };
+		B3B18FCC1E755E5000D8219C /* TYDrawStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYDrawStorage.m; sourceTree = "<group>"; };
+		B3B18FCD1E755E5000D8219C /* TYImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYImageCache.h; sourceTree = "<group>"; };
+		B3B18FCE1E755E5000D8219C /* TYImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYImageCache.m; sourceTree = "<group>"; };
+		B3B18FCF1E755E5000D8219C /* TYImageStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYImageStorage.h; sourceTree = "<group>"; };
 		B3B18FD01DE6A2BB0064F362 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B3B18FD01E755E5000D8219C /* TYImageStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYImageStorage.m; sourceTree = "<group>"; };
 		B3B18FD11DE6A2BB0064F362 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B3B18FD11E755E5000D8219C /* TYLinkTextStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYLinkTextStorage.h; sourceTree = "<group>"; };
+		B3B18FD21E755E5000D8219C /* TYLinkTextStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYLinkTextStorage.m; sourceTree = "<group>"; };
+		B3B18FD31E755E5000D8219C /* TYTextContainer+Extended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TYTextContainer+Extended.m"; sourceTree = "<group>"; };
+		B3B18FD41E755E5000D8219C /* TYTextContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYTextContainer.h; sourceTree = "<group>"; };
+		B3B18FD51E755E5000D8219C /* TYTextContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYTextContainer.m; sourceTree = "<group>"; };
+		B3B18FD61E755E5000D8219C /* TYTextStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYTextStorage.h; sourceTree = "<group>"; };
+		B3B18FD71E755E5000D8219C /* TYTextStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYTextStorage.m; sourceTree = "<group>"; };
+		B3B18FD81E755E5000D8219C /* TYTextStorageProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYTextStorageProtocol.h; sourceTree = "<group>"; };
+		B3B18FD91E755E5000D8219C /* TYViewStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYViewStorage.h; sourceTree = "<group>"; };
+		B3B18FDA1E755E5000D8219C /* TYViewStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYViewStorage.m; sourceTree = "<group>"; };
+		B3B18FE61E75607400D8219C /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
+		B3B18FE71E75607400D8219C /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
+		B3B18FE91E7564F500D8219C /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		B3B196471DE6ABEB0064F362 /* UIView+JSExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JSExtension.h"; sourceTree = "<group>"; };
 		B3B196481DE6ABEB0064F362 /* UIView+JSExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JSExtension.m"; sourceTree = "<group>"; };
 		B3B1964A1DE6C4FF0064F362 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
@@ -498,6 +539,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3B18FEA1E7564F500D8219C /* libicucore.tbd in Frameworks */,
 				F02F905F596DC2D7E3B1AA06 /* libPods-JSLivePlayer.a in Frameworks */,
 				B3B9AD261E1E81DB0057CEEF /* IJKMediaFramework.framework in Frameworks */,
 			);
@@ -518,6 +560,7 @@
 		7F92CDB59A6C1A5709389BC8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B3B18FE91E7564F500D8219C /* libicucore.tbd */,
 				B3B196521DE6C5350064F362 /* QuartzCore.framework */,
 				B3B196501DE6C52B0064F362 /* AVFoundation.framework */,
 				B3B1964E1DE6C51E0064F362 /* OpenGLES.framework */,
@@ -899,6 +942,8 @@
 		B3B18F9F1E73EBFB00D8219C /* TablkPannel */ = {
 			isa = PBXGroup;
 			children = (
+				B3B18FE51E75607400D8219C /* Helpers */,
+				B3B18FBF1E755C4900D8219C /* Model */,
 				B3B18FA01E73EBFB00D8219C /* View */,
 			);
 			path = TablkPannel;
@@ -913,6 +958,8 @@
 				B3B18FA41E73EBFB00D8219C /* JSKeyBoardInputView.m */,
 				B3B18FA51E73EBFB00D8219C /* JSMessageTableView.h */,
 				B3B18FA61E73EBFB00D8219C /* JSMessageTableView.m */,
+				B3B18FC31E755C7800D8219C /* JSMessageCell.h */,
+				B3B18FC41E755C7800D8219C /* JSMessageCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -975,6 +1022,42 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B3B18FBF1E755C4900D8219C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B3B18FC01E755C5D00D8219C /* JSMessageModel.h */,
+				B3B18FC11E755C5D00D8219C /* JSMessageModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B3B18FC61E755E5000D8219C /* TYAttributedLabel */ = {
+			isa = PBXGroup;
+			children = (
+				B3B18FC71E755E5000D8219C /* NSMutableAttributedString+TY.h */,
+				B3B18FC81E755E5000D8219C /* NSMutableAttributedString+TY.m */,
+				B3B18FC91E755E5000D8219C /* TYAttributedLabel.h */,
+				B3B18FCA1E755E5000D8219C /* TYAttributedLabel.m */,
+				B3B18FCB1E755E5000D8219C /* TYDrawStorage.h */,
+				B3B18FCC1E755E5000D8219C /* TYDrawStorage.m */,
+				B3B18FCD1E755E5000D8219C /* TYImageCache.h */,
+				B3B18FCE1E755E5000D8219C /* TYImageCache.m */,
+				B3B18FCF1E755E5000D8219C /* TYImageStorage.h */,
+				B3B18FD01E755E5000D8219C /* TYImageStorage.m */,
+				B3B18FD11E755E5000D8219C /* TYLinkTextStorage.h */,
+				B3B18FD21E755E5000D8219C /* TYLinkTextStorage.m */,
+				B3B18FD31E755E5000D8219C /* TYTextContainer+Extended.m */,
+				B3B18FD41E755E5000D8219C /* TYTextContainer.h */,
+				B3B18FD51E755E5000D8219C /* TYTextContainer.m */,
+				B3B18FD61E755E5000D8219C /* TYTextStorage.h */,
+				B3B18FD71E755E5000D8219C /* TYTextStorage.m */,
+				B3B18FD81E755E5000D8219C /* TYTextStorageProtocol.h */,
+				B3B18FD91E755E5000D8219C /* TYViewStorage.h */,
+				B3B18FDA1E755E5000D8219C /* TYViewStorage.m */,
+			);
+			path = TYAttributedLabel;
+			sourceTree = "<group>";
+		};
 		B3B18FCF1DE6A2BB0064F362 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -1001,9 +1084,19 @@
 		B3B18FD61DE6A2BB0064F362 /* ThirdLib */ = {
 			isa = PBXGroup;
 			children = (
+				B3B18FC61E755E5000D8219C /* TYAttributedLabel */,
 				B3B9AD251E1E81DB0057CEEF /* IJKMediaFramework.framework */,
 			);
 			path = ThirdLib;
+			sourceTree = "<group>";
+		};
+		B3B18FE51E75607400D8219C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B3B18FE61E75607400D8219C /* RegexKitLite.h */,
+				B3B18FE71E75607400D8219C /* RegexKitLite.m */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		B3B196461DE6AB6D0064F362 /* Categories */ = {
@@ -1346,25 +1439,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3B18FDF1E755E5000D8219C /* TYImageStorage.m in Sources */,
+				B3B18FE21E755E5000D8219C /* TYTextContainer.m in Sources */,
 				B3B18F751E729CED00D8219C /* JSAnchorView.m in Sources */,
 				B3B18F961E73C3D600D8219C /* JSSendGiftView.m in Sources */,
 				B3B196491DE6ABEB0064F362 /* UIView+JSExtension.m in Sources */,
 				B3B18F931E73A27200D8219C /* JSPresentView.m in Sources */,
 				B3AC6AE51DFADCBC008F9482 /* JSBaseViewController.m in Sources */,
+				B3B18FDC1E755E5000D8219C /* TYAttributedLabel.m in Sources */,
+				B3B18FDB1E755E5000D8219C /* NSMutableAttributedString+TY.m in Sources */,
 				B3B18D1E1E71772000D8219C /* DMHeartFlyView.m in Sources */,
 				B3B18D161E6E7BDD00D8219C /* JSHomeTableViewCell.m in Sources */,
+				B3B18FE41E755E5000D8219C /* TYViewStorage.m in Sources */,
+				B3B18FDE1E755E5000D8219C /* TYImageCache.m in Sources */,
 				B3B18D121E6E7AD600D8219C /* LiveModel.m in Sources */,
 				B3B18F781E72B46D00D8219C /* JSBottomView.m in Sources */,
+				B3B18FE11E755E5000D8219C /* TYTextContainer+Extended.m in Sources */,
 				B3B18E3A1E727AA900D8219C /* JSNetworkManager.m in Sources */,
 				B3B18F8E1E739C4300D8219C /* JSDanmuLaunchView.m in Sources */,
+				B3B18FE01E755E5000D8219C /* TYLinkTextStorage.m in Sources */,
+				B3B18FE31E755E5000D8219C /* TYTextStorage.m in Sources */,
 				B3B9AD1E1E1E71EF0057CEEF /* JSLiveViewController.m in Sources */,
+				B3B18FC21E755C5D00D8219C /* JSMessageModel.m in Sources */,
 				B3B18FD71DE6A2BB0064F362 /* AppDelegate.m in Sources */,
 				B3B18E361E7183D000D8219C /* JSAnimationHeader.m in Sources */,
 				B3B18FA91E73EBFB00D8219C /* JSMessageTableView.m in Sources */,
+				B3B18FDD1E755E5000D8219C /* TYDrawStorage.m in Sources */,
 				B3B18FA81E73EBFB00D8219C /* JSKeyBoardInputView.m in Sources */,
 				B3AC6AE81DFB9437008F9482 /* JSBaseNavigationController.m in Sources */,
+				B3B18FE81E75607400D8219C /* RegexKitLite.m in Sources */,
 				B3B18D1A1E6E7C7500D8219C /* JSRootTabViewController.m in Sources */,
 				B3B18FBA1DE5AA040064F362 /* main.m in Sources */,
+				B3B18FC51E755C7800D8219C /* JSMessageCell.m in Sources */,
 				B3B18FA71E73EBFB00D8219C /* JSCustomSwitch.m in Sources */,
 				B3AC6B721DFBCACD008F9482 /* JSMineViewController.m in Sources */,
 				B3AC6B6C1DFBC748008F9482 /* JSHomeViewController.m in Sources */,
@@ -1495,6 +1601,43 @@
 				GCC_PREFIX_HEADER = JSLivePlayer/Classes/Others/JSLivePlayer.pch;
 				INFOPLIST_FILE = JSLivePlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"BarrageRenderer\"",
+					"-l\"LFLiveKit\"",
+					"-l\"MJExtension\"",
+					"-l\"MJRefresh\"",
+					"-l\"Masonry\"",
+					"-l\"SDWebImage\"",
+					"-l\"c++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"GPUImage\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"VideoToolbox\"",
+					"-framework",
+					"\"pili-librtmp\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.leo.JSLivePlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1514,6 +1657,43 @@
 				GCC_PREFIX_HEADER = JSLivePlayer/Classes/Others/JSLivePlayer.pch;
 				INFOPLIST_FILE = JSLivePlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"BarrageRenderer\"",
+					"-l\"LFLiveKit\"",
+					"-l\"MJExtension\"",
+					"-l\"MJRefresh\"",
+					"-l\"Masonry\"",
+					"-l\"SDWebImage\"",
+					"-l\"c++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"GPUImage\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"VideoToolbox\"",
+					"-framework",
+					"\"pili-librtmp\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.leo.JSLivePlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
