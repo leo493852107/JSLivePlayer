@@ -13,6 +13,6 @@ target 'JSLivePlayer' do
 	pod 'LFLiveKit'
     pod 'Masonry'
 	pod 'Hyphenate'
-
+	pod 'UMengAnalytics-NO-IDFA'
 
 end
