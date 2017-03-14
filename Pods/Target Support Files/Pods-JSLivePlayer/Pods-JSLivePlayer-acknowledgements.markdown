@@ -50,6 +50,10 @@ SOFTWARE.
 
 
 
+## Hyphenate
+
+Hyphenate Inc. 2016
+
 ## LFLiveKit
 
 The MIT License (MIT)

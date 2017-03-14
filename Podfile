@@ -12,7 +12,7 @@ target 'JSLivePlayer' do
 	pod 'MJRefresh'
 	pod 'LFLiveKit'
     pod 'Masonry'
-
+	pod 'Hyphenate'
 
 
 end
