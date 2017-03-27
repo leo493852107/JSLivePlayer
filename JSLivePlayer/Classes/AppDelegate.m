@@ -6,8 +6,12 @@
 //  Copyright © 2016 leo. All rights reserved.
 //
 
+
+
 #import "AppDelegate.h"
+#import "JSLoginVC.h"
 #import "JSRootTabViewController.h"
+
 
 
 @interface AppDelegate ()
@@ -19,10 +23,25 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    [Bmob registerWithAppKey:@"e22f1be95ee7577e4618ada4ef4638ad"];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    JSRootTabViewController *rootTabVC = [[JSRootTabViewController alloc] init];
-    self.window.rootViewController = rootTabVC;
+    
+    self.window.rootViewController = [[JSLoginVC alloc] init];
+    
+//    BOOL isAutoLogin = [[EaseMob sharedInstance].chatManager isAutoLoginEnabled];
+//    if (!isAutoLogin) {
+//        self.window.rootViewController = [[JSLoginVC alloc] init];
+//    } else {
+//        self.window.rootViewController = [[JSRootTabViewController alloc] init];
+//    }
+    
+    if ([BmobUser currentUser]) {
+        self.window.rootViewController = [[JSRootTabViewController alloc] init];
+    } else {
+        self.window.rootViewController = [[JSLoginVC alloc] init];
+    }
+    
     [self.window makeKeyWindow];
     
     return YES;

@@ -13,6 +13,7 @@
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
 #import <objc/runtime.h>
+#import <BmobSDK/Bmob.h>
 #import "UIView+JSExtension.h"
 
 #ifdef DEBUG // 处于开发阶段

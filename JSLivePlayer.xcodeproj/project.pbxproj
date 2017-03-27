@@ -57,7 +57,6 @@
 		B3AC6B651DFBBE44008F9482 /* shortvideo_main_video@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3AC6B361DFBBE44008F9482 /* shortvideo_main_video@2x.png */; };
 		B3AC6B661DFBBE44008F9482 /* shortvideo_main_video@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3AC6B371DFBBE44008F9482 /* shortvideo_main_video@3x.png */; };
 		B3AC6B6C1DFBC748008F9482 /* JSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3AC6B6B1DFBC748008F9482 /* JSHomeViewController.m */; };
-		B3AC6B721DFBCACD008F9482 /* JSMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3AC6B711DFBCACD008F9482 /* JSMineViewController.m */; };
 		B3B18D121E6E7AD600D8219C /* LiveModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B18D111E6E7AD600D8219C /* LiveModel.m */; };
 		B3B18D161E6E7BDD00D8219C /* JSHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B18D141E6E7BDD00D8219C /* JSHomeTableViewCell.m */; };
 		B3B18D171E6E7BDD00D8219C /* JSHomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3B18D151E6E7BDD00D8219C /* JSHomeTableViewCell.xib */; };
@@ -247,6 +246,11 @@
 		B3B9AD261E1E81DB0057CEEF /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3B9AD251E1E81DB0057CEEF /* IJKMediaFramework.framework */; };
 		B3B9AD2D1E1F863A0057CEEF /* mg_room_btn_guan_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B9AD2B1E1F863A0057CEEF /* mg_room_btn_guan_h@2x.png */; };
 		B3B9AD2E1E1F863A0057CEEF /* mg_room_btn_guan_h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B9AD2C1E1F863A0057CEEF /* mg_room_btn_guan_h@3x.png */; };
+		B3DF159D1E88FDF2001EA6F6 /* JSMeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DF15991E88FDF2001EA6F6 /* JSMeVC.m */; };
+		B3DF159E1E88FDF2001EA6F6 /* JSMeView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DF159C1E88FDF2001EA6F6 /* JSMeView.m */; };
+		B3DF15A61E88FE54001EA6F6 /* JSLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DF15A21E88FE54001EA6F6 /* JSLoginVC.m */; };
+		B3DF15A71E88FE54001EA6F6 /* JSLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DF15A51E88FE54001EA6F6 /* JSLoginView.m */; };
+		B3DF15B91E88FF1C001EA6F6 /* JSCommonTools.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DF15B81E88FF1C001EA6F6 /* JSCommonTools.m */; };
 		F02F905F596DC2D7E3B1AA06 /* libPods-JSLivePlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BB77D613D797108A3455342 /* libPods-JSLivePlayer.a */; };
 /* End PBXBuildFile section */
 
@@ -307,8 +311,6 @@
 		B3AC6B371DFBBE44008F9482 /* shortvideo_main_video@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shortvideo_main_video@3x.png"; sourceTree = "<group>"; };
 		B3AC6B6A1DFBC748008F9482 /* JSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSHomeViewController.h; sourceTree = "<group>"; };
 		B3AC6B6B1DFBC748008F9482 /* JSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSHomeViewController.m; sourceTree = "<group>"; };
-		B3AC6B701DFBCACD008F9482 /* JSMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSMineViewController.h; sourceTree = "<group>"; };
-		B3AC6B711DFBCACD008F9482 /* JSMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSMineViewController.m; sourceTree = "<group>"; };
 		B3B18D101E6E7AD600D8219C /* LiveModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveModel.h; sourceTree = "<group>"; };
 		B3B18D111E6E7AD600D8219C /* LiveModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveModel.m; sourceTree = "<group>"; };
 		B3B18D131E6E7BDD00D8219C /* JSHomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSHomeTableViewCell.h; sourceTree = "<group>"; };
@@ -538,6 +540,16 @@
 		B3B9AD251E1E81DB0057CEEF /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
 		B3B9AD2B1E1F863A0057CEEF /* mg_room_btn_guan_h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mg_room_btn_guan_h@2x.png"; sourceTree = "<group>"; };
 		B3B9AD2C1E1F863A0057CEEF /* mg_room_btn_guan_h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mg_room_btn_guan_h@3x.png"; sourceTree = "<group>"; };
+		B3DF15981E88FDF2001EA6F6 /* JSMeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSMeVC.h; sourceTree = "<group>"; };
+		B3DF15991E88FDF2001EA6F6 /* JSMeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSMeVC.m; sourceTree = "<group>"; };
+		B3DF159B1E88FDF2001EA6F6 /* JSMeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSMeView.h; sourceTree = "<group>"; };
+		B3DF159C1E88FDF2001EA6F6 /* JSMeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSMeView.m; sourceTree = "<group>"; };
+		B3DF15A11E88FE54001EA6F6 /* JSLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSLoginVC.h; sourceTree = "<group>"; };
+		B3DF15A21E88FE54001EA6F6 /* JSLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSLoginVC.m; sourceTree = "<group>"; };
+		B3DF15A41E88FE54001EA6F6 /* JSLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSLoginView.h; sourceTree = "<group>"; };
+		B3DF15A51E88FE54001EA6F6 /* JSLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSLoginView.m; sourceTree = "<group>"; };
+		B3DF15B71E88FF1C001EA6F6 /* JSCommonTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSCommonTools.h; sourceTree = "<group>"; };
+		B3DF15B81E88FF1C001EA6F6 /* JSCommonTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSCommonTools.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -580,6 +592,7 @@
 		B3AC6AE01DFADCA3008F9482 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B3DF159F1E88FE54001EA6F6 /* Login */,
 				B3AC6AE11DFADCA3008F9482 /* Base */,
 				B3AC6AE21DFADCA3008F9482 /* Home */,
 				B3AC6AEE1DFB9891008F9482 /* Mine */,
@@ -615,9 +628,8 @@
 		B3AC6AEE1DFB9891008F9482 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
-				B3AC6B6D1DFBCA85008F9482 /* Controller */,
-				B3AC6B6E1DFBCA85008F9482 /* Model */,
-				B3AC6B6F1DFBCA85008F9482 /* View */,
+				B3DF15971E88FDF2001EA6F6 /* Controller */,
+				B3DF159A1E88FDF2001EA6F6 /* View */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -739,32 +751,11 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		B3AC6B6D1DFBCA85008F9482 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				B3AC6B701DFBCACD008F9482 /* JSMineViewController.h */,
-				B3AC6B711DFBCACD008F9482 /* JSMineViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		B3AC6B6E1DFBCA85008F9482 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		B3AC6B6F1DFBCA85008F9482 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		B3B18E371E727A8F00D8219C /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				B3DF15B71E88FF1C001EA6F6 /* JSCommonTools.h */,
+				B3DF15B81E88FF1C001EA6F6 /* JSCommonTools.m */,
 				B3B18E381E727AA900D8219C /* JSNetworkManager.h */,
 				B3B18E391E727AA900D8219C /* JSNetworkManager.m */,
 			);
@@ -1127,6 +1118,51 @@
 			path = ExitBtn;
 			sourceTree = "<group>";
 		};
+		B3DF15971E88FDF2001EA6F6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B3DF15981E88FDF2001EA6F6 /* JSMeVC.h */,
+				B3DF15991E88FDF2001EA6F6 /* JSMeVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B3DF159A1E88FDF2001EA6F6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B3DF159B1E88FDF2001EA6F6 /* JSMeView.h */,
+				B3DF159C1E88FDF2001EA6F6 /* JSMeView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B3DF159F1E88FE54001EA6F6 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				B3DF15A01E88FE54001EA6F6 /* Controller */,
+				B3DF15A31E88FE54001EA6F6 /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		B3DF15A01E88FE54001EA6F6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B3DF15A11E88FE54001EA6F6 /* JSLoginVC.h */,
+				B3DF15A21E88FE54001EA6F6 /* JSLoginVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B3DF15A31E88FE54001EA6F6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B3DF15A41E88FE54001EA6F6 /* JSLoginView.h */,
+				B3DF15A51E88FE54001EA6F6 /* JSLoginView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1457,6 +1493,7 @@
 				B3B18F931E73A27200D8219C /* JSPresentView.m in Sources */,
 				B3AC6AE51DFADCBC008F9482 /* JSBaseViewController.m in Sources */,
 				B3B18FDC1E755E5000D8219C /* TYAttributedLabel.m in Sources */,
+				B3DF15B91E88FF1C001EA6F6 /* JSCommonTools.m in Sources */,
 				B3B18FDB1E755E5000D8219C /* NSMutableAttributedString+TY.m in Sources */,
 				B3B18D1E1E71772000D8219C /* DMHeartFlyView.m in Sources */,
 				B3B18D161E6E7BDD00D8219C /* JSHomeTableViewCell.m in Sources */,
@@ -1464,6 +1501,7 @@
 				B3B18FDE1E755E5000D8219C /* TYImageCache.m in Sources */,
 				B3B18D121E6E7AD600D8219C /* LiveModel.m in Sources */,
 				B3B18F781E72B46D00D8219C /* JSBottomView.m in Sources */,
+				B3DF159E1E88FDF2001EA6F6 /* JSMeView.m in Sources */,
 				B3B18FE11E755E5000D8219C /* TYTextContainer+Extended.m in Sources */,
 				B3B18E3A1E727AA900D8219C /* JSNetworkManager.m in Sources */,
 				B3B18FE01E755E5000D8219C /* TYLinkTextStorage.m in Sources */,
@@ -1475,15 +1513,17 @@
 				B3B18FF91E75710E00D8219C /* DanmuItemView.m in Sources */,
 				B3B18E361E7183D000D8219C /* JSAnimationHeader.m in Sources */,
 				B3B18FA91E73EBFB00D8219C /* JSMessageTableView.m in Sources */,
+				B3DF15A61E88FE54001EA6F6 /* JSLoginVC.m in Sources */,
+				B3DF159D1E88FDF2001EA6F6 /* JSMeVC.m in Sources */,
 				B3B18FDD1E755E5000D8219C /* TYDrawStorage.m in Sources */,
 				B3B18FA81E73EBFB00D8219C /* JSKeyBoardInputView.m in Sources */,
 				B3AC6AE81DFB9437008F9482 /* JSBaseNavigationController.m in Sources */,
 				B3B18FE81E75607400D8219C /* RegexKitLite.m in Sources */,
+				B3DF15A71E88FE54001EA6F6 /* JSLoginView.m in Sources */,
 				B3B18D1A1E6E7C7500D8219C /* JSRootTabViewController.m in Sources */,
 				B3B18FBA1DE5AA040064F362 /* main.m in Sources */,
 				B3B18FC51E755C7800D8219C /* JSMessageCell.m in Sources */,
 				B3B18FA71E73EBFB00D8219C /* JSCustomSwitch.m in Sources */,
-				B3AC6B721DFBCACD008F9482 /* JSMineViewController.m in Sources */,
 				B3AC6B6C1DFBC748008F9482 /* JSHomeViewController.m in Sources */,
 				B3B18FFA1E75710E00D8219C /* DanmuLaunchView.m in Sources */,
 			);

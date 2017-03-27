@@ -8,7 +8,7 @@
 
 #import "JSRootTabViewController.h"
 #import "JSHomeViewController.h"
-#import "JSMineViewController.h"
+#import "JSMeVC.h"
 #import "JSBaseNavigationController.h"
 
 @interface JSRootTabViewController ()
@@ -33,7 +33,7 @@
     JSBaseNavigationController *homeNav = [[JSBaseNavigationController alloc] initWithRootViewController:homeVC];
     [self addChildViewController:homeNav];
     
-    JSMineViewController *mineVC = [[JSMineViewController alloc] init];
+    JSMeVC *mineVC = [[JSMeVC alloc] init];
     mineVC.tabBarItem.image = [UIImage imageNamed:@"tab_me"];
     mineVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"tab_me_p"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     JSBaseNavigationController *mineNav = [[JSBaseNavigationController alloc] initWithRootViewController:mineVC];
