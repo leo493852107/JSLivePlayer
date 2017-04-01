@@ -98,7 +98,7 @@
 #pragma mark - 懒加载
 - (NSString *)nickName {
     if (!_nickName) {
-        _nickName = @"游客A";
+        _nickName = [BmobUser currentUser].username;
     }
     return _nickName;
 }
