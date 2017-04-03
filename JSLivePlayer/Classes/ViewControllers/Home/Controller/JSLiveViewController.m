@@ -103,6 +103,14 @@
     return _nickName;
 }
 
+- (NSString *)userIcon {
+    if (!_userIcon) {
+
+    _userIcon = [[BmobUser currentUser] objectForKey:@"userIcon"] == nil ? @"" : [[BmobUser currentUser] objectForKey:@"userIcon"];        
+    }
+    return _userIcon;
+}
+
 - (JSSendGiftView *)giftView {
     if (!_giftView) {
         _giftView = [[JSSendGiftView alloc] initWithFrame:self.view.bounds];
