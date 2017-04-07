@@ -10,9 +10,26 @@
 
 #import "JSMeView.h"
 #import <Masonry.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @implementation JSMeView
 
+#pragma mark - 懒加载
+- (UIImageView *)imgView {
+    if (!_imgView) {
+        NSString *imgStr = [[BmobUser currentUser] objectForKey:@"userIcon"];
+        _imgView = [[UIImageView alloc] init];
+        [_imgView sd_setImageWithURL:[NSURL URLWithString:imgStr]];
+        
+        // 添加边框，圆角
+        CALayer *layer = [_imgView layer];
+        layer.borderColor = [[UIColor blackColor] CGColor];
+        layer.borderWidth = 0.5f;
+        layer.masksToBounds = YES;
+        layer.cornerRadius = 25.0;
+    }
+    return _imgView;
+}
 #pragma mark - 懒加载
 - (UILabel *)nameLabel {
     if (!_nameLabel) {
@@ -20,7 +37,7 @@
 //        _nameLabel.text = [[[EaseMob sharedInstance].chatManager loginInfo] objectForKey:@"username"];
         _nameLabel.text = [BmobUser currentUser].username;
         _nameLabel.font = [UIFont systemFontOfSize:20];
-        _nameLabel.textAlignment = NSTextAlignmentCenter;
+        _nameLabel.textAlignment = NSTextAlignmentRight;
     }
     return _nameLabel;
 }
@@ -58,20 +75,29 @@
 
 - (void)initUI {
     
+    [self addSubview:self.imgView];
     [self addSubview:self.nameLabel];
     
     [self addSubview:self.logoutBtn];
     
-    [_nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    [_imgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self).offset(100);
         make.left.mas_equalTo(self).offset(marginLeftRight);
+//        make.right.mas_equalTo(self.nameLabel.mas_left).offset(marginLeftRight);
+        make.width.mas_equalTo(50);
+        make.height.mas_equalTo(50);
+    }];
+    
+    [_nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self).offset(100);
+        make.left.mas_equalTo(self.imgView.mas_right).offset(marginLeftRight);
         make.right.mas_equalTo(self).offset(-marginLeftRight);
-        make.height.mas_equalTo(30);
+        make.height.mas_equalTo(50);
     }];
 
     
     [_logoutBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(_nameLabel.mas_bottom).offset(marginLeftRight);
+        make.top.mas_equalTo(_imgView.mas_bottom).offset(marginLeftRight);
         make.left.mas_equalTo(self).offset(marginLeftRight);
         make.right.mas_equalTo(self).offset(-marginLeftRight);
         make.height.mas_equalTo(30);
