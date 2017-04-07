@@ -42,6 +42,17 @@
     return _nameLabel;
 }
 
+- (UILabel *)emailLabel {
+    if (!_emailLabel) {
+        _emailLabel = [[UILabel alloc] init];
+        //        _nameLabel.text = [[[EaseMob sharedInstance].chatManager loginInfo] objectForKey:@"username"];
+        _emailLabel.text = [BmobUser currentUser].email;
+        _emailLabel.font = [UIFont systemFontOfSize:15];
+        _emailLabel.textAlignment = NSTextAlignmentRight;
+    }
+    return _emailLabel;
+}
+
 - (UIButton *)logoutBtn {
     if (!_logoutBtn) {
         _logoutBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -77,6 +88,7 @@
     
     [self addSubview:self.imgView];
     [self addSubview:self.nameLabel];
+    [self addSubview:self.emailLabel];
     
     [self addSubview:self.logoutBtn];
     
@@ -89,15 +101,22 @@
     }];
     
     [_nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self).offset(100);
+        make.top.mas_equalTo(_imgView.mas_top);
         make.left.mas_equalTo(self.imgView.mas_right).offset(marginLeftRight);
         make.right.mas_equalTo(self).offset(-marginLeftRight);
-        make.height.mas_equalTo(50);
+        make.height.mas_equalTo(30);
+    }];
+    
+    [_emailLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(_nameLabel.mas_bottom);
+        make.left.mas_equalTo(_nameLabel.mas_left);
+        make.right.mas_equalTo(_nameLabel.mas_right);
+        make.height.mas_equalTo(30);
     }];
 
     
     [_logoutBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(_imgView.mas_bottom).offset(marginLeftRight);
+        make.top.mas_equalTo(_emailLabel.mas_bottom).offset(marginLeftRight);
         make.left.mas_equalTo(self).offset(marginLeftRight);
         make.right.mas_equalTo(self).offset(-marginLeftRight);
         make.height.mas_equalTo(30);

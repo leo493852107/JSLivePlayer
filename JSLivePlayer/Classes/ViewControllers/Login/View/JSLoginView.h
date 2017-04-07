@@ -19,9 +19,13 @@ typedef void(^loginBtnClick)(UIButton *btn);
 /** <#desc#> */
 @property (nonatomic, strong) UILabel *passwordLabel;
 /** <#desc#> */
+@property (nonatomic, strong) UILabel *emailLabel;
+/** <#desc#> */
 @property (nonatomic, strong) UITextField *usernameTextField;
 /** <#desc#> */
 @property (nonatomic, strong) UITextField *passwordTextField;
+/** <#desc#> */
+@property (nonatomic, strong) UITextField *emailTextField;
 /** <#desc#> */
 @property (nonatomic, strong) UIButton *registerBtn;
 /** <#desc#> */

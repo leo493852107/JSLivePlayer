@@ -41,12 +41,13 @@
         BmobUser *bUser = [[BmobUser alloc] init];
         [bUser setUsername:weakLoginView.usernameTextField.text];
         [bUser setPassword:weakLoginView.passwordTextField.text];
+        [bUser setEmail:weakLoginView.emailTextField.text];
 //        [bUser setObject:@18 forKey:@"age"];
         [bUser signUpInBackgroundWithBlock:^ (BOOL isSuccessful, NSError *error){
             if (isSuccessful){
                 [JSCommonTools normalAlertWithTitle:@"注册成功" WithMessage:@"恭喜注册成功" WithPreferredStyle:UIAlertControllerStyleAlert WithController:weakSelf];
             } else {
-                [JSCommonTools normalAlertWithTitle:@"注册失败" WithMessage:[NSString stringWithFormat:@"%@", error] WithPreferredStyle:UIAlertControllerStyleAlert WithController:weakSelf];
+                [JSCommonTools normalAlertWithTitle:@"注册失败" WithMessage:error.userInfo[@"NSLocalizedDescription"] WithPreferredStyle:UIAlertControllerStyleAlert WithController:weakSelf];
             }
         }];
         

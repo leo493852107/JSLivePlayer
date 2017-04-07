@@ -49,6 +49,15 @@
     return _usernameTextField;
 }
 
+- (UITextField *)emailTextField {
+    if (!_emailTextField) {
+        _emailTextField = [[UITextField alloc] init];
+        _emailTextField.borderStyle = UITextBorderStyleRoundedRect;
+        _emailTextField.placeholder = @"请输入Email";
+    }
+    return _emailTextField;
+}
+
 - (UITextField *)passwordTextField {
     if (!_passwordTextField) {
         _passwordTextField = [[UITextField alloc] init];
@@ -67,6 +76,16 @@
         _usernameLabel.textAlignment = NSTextAlignmentRight;
     }
     return _usernameLabel;
+}
+
+- (UILabel *)emailLabel {
+    if (!_emailLabel) {
+        _emailLabel = [[UILabel alloc] init];
+        _emailLabel.text = @"Email:";
+        _emailLabel.font = [UIFont systemFontOfSize:14];
+        _emailLabel.textAlignment = NSTextAlignmentRight;
+    }
+    return _emailLabel;
 }
 
 - (UILabel *)passwordLabel {
@@ -114,8 +133,10 @@
     
     [self addSubview:self.usernameLabel];
     [self addSubview:self.passwordLabel];
+    [self addSubview:self.emailLabel];
     [self addSubview:self.usernameTextField];
     [self addSubview:self.passwordTextField];
+    [self addSubview:self.emailTextField];
     [self addSubview:self.loginBtn];
     [self addSubview:self.registerBtn];
     
@@ -135,8 +156,23 @@
         make.height.mas_equalTo(_usernameLabel);
     }];
     
-    [_passwordLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    [_emailLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.usernameLabel.mas_bottom).offset(marginLeftRight);
+        make.left.mas_equalTo(self).offset(marginLeftRight);
+        make.width.mas_equalTo(50);
+        make.height.mas_equalTo(30);
+    }];
+    
+    [_emailTextField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(_emailLabel);
+        make.left.mas_equalTo(_emailLabel.mas_right).offset(10);
+        make.right.mas_equalTo(self).offset(-marginLeftRight);
+        make.height.mas_equalTo(_emailLabel);
+    }];
+
+    
+    [_passwordLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(_emailLabel.mas_bottom).offset(marginLeftRight);
         make.left.mas_equalTo(self).offset(marginLeftRight);
         make.width.mas_equalTo(50);
         make.height.mas_equalTo(30);

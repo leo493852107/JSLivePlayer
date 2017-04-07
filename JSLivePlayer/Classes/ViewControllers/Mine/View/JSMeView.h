@@ -16,6 +16,9 @@ typedef void(^logoutBtnClick)(UIButton *btn);
 @property (nonatomic, strong) UILabel *nameLabel;
 
 /** <#desc#> */
+@property (nonatomic, strong) UILabel *emailLabel;
+
+/** <#desc#> */
 @property (nonatomic, strong) UIImageView *imgView;
 
 /** <#desc#> */
