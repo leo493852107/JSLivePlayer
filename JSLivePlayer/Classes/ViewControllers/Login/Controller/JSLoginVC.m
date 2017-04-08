@@ -21,6 +21,18 @@
 
 @implementation JSLoginVC
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [MobClick beginLogPageView:@"JSLoginVC"];//("PageOne"为页面名称，可自定义)
+}
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [MobClick endLogPageView:@"JSLoginVC"];
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -59,7 +71,7 @@
         [BmobUser loginWithUsernameInBackground:weakLoginView.usernameTextField.text
                                        password:weakLoginView.passwordTextField.text block:^(BmobUser *user, NSError *error) {
                                            if (error) {
-                                               [JSCommonTools normalAlertWithTitle:@"登录失败" WithMessage:[NSString stringWithFormat:@"%@", error] WithPreferredStyle:UIAlertControllerStyleAlert WithController:weakSelf];
+                                               [JSCommonTools normalAlertWithTitle:@"登录失败" WithMessage:error.userInfo[@"NSLocalizedDescription"] WithPreferredStyle:UIAlertControllerStyleAlert WithController:weakSelf];
                                            } else {
                                                [weakSelf presentViewController:[[JSRootTabViewController alloc] init] animated:YES completion:nil];
                                            }

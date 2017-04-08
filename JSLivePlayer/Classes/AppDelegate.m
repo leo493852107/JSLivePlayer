@@ -23,6 +23,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    UMConfigInstance.appKey = @"58df3ae45312dd0f20000681";
+    [MobClick startWithConfigure:UMConfigInstance];//配置以上参数后调用此方法初始化SDK！
+    
     [Bmob registerWithAppKey:@"e22f1be95ee7577e4618ada4ef4638ad"];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];

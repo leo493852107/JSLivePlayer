@@ -57,7 +57,11 @@
     UITapGestureRecognizer *tapGesture;
 }
 
-
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [MobClick beginLogPageView:@"JSLiveViewController"];//("PageOne"为页面名称，可自定义)
+}
 #pragma mark - JSKeyBoardInputViewDelegate
 - (void)keyBoardSendMessage:(NSString *)message withDanmu:(BOOL)danmu {
     if (message.length == 0) {
@@ -430,7 +434,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    
+    [MobClick endLogPageView:@"JSLiveViewController"];
 //    if ([self.splashTimer isValid]) {
 //        self.splashTimer = nil;
 //    }

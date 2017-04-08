@@ -14,6 +14,13 @@
 @implementation JSLoginView
 
 #pragma mark - 懒加载
+- (UIImageView *)backgroundView {
+    if (!_backgroundView) {
+        _backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"player_register_bak"]];
+    }
+    return _backgroundView;
+}
+
 - (UIButton *)loginBtn {
     if (!_loginBtn) {
         _loginBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -130,6 +137,7 @@
 - (void)initUI {
     
     self.backgroundColor = [UIColor whiteColor];
+    [self addSubview:self.backgroundView];
     
     [self addSubview:self.usernameLabel];
     [self addSubview:self.passwordLabel];
@@ -141,6 +149,9 @@
     [self addSubview:self.registerBtn];
     
     
+    [_backgroundView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.bottom.left.right.mas_equalTo(self);
+    }];
     
     [_usernameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self).offset(100);

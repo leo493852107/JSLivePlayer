@@ -13,6 +13,8 @@ typedef void(^loginBtnClick)(UIButton *btn);
 
 @interface JSLoginView : UIView
 
+/** <#desc#> */
+@property (nonatomic, strong) UIImageView *backgroundView;
 
 /** <#desc#> */
 @property (nonatomic, strong) UILabel *usernameLabel;

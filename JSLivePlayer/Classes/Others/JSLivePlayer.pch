@@ -14,6 +14,7 @@
 
 #import <objc/runtime.h>
 #import <BmobSDK/Bmob.h>
+#import "UMMobClick/MobClick.h"
 #import "UIView+JSExtension.h"
 
 #ifdef DEBUG // 处于开发阶段

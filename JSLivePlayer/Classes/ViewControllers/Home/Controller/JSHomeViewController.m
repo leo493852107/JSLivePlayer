@@ -30,6 +30,17 @@
 
 static NSString * const ID = @"cell";
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [MobClick beginLogPageView:@"JSHomeViewController"];//("PageOne"为页面名称，可自定义)
+}
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [MobClick endLogPageView:@"JSHomeViewController"];
+}
+
 
 - (UITableView *)hotTableView {
     if (_hotTableView == nil) {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B3537D351E98882200F7F2FF /* player_register_bak.png in Resources */ = {isa = PBXBuildFile; fileRef = B3537D341E98882200F7F2FF /* player_register_bak.png */; };
 		B3AC6AE51DFADCBC008F9482 /* JSBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3AC6AE41DFADCBC008F9482 /* JSBaseViewController.m */; };
 		B3AC6AE81DFB9437008F9482 /* JSBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3AC6AE71DFB9437008F9482 /* JSBaseNavigationController.m */; };
 		B3AC6B381DFBBE44008F9482 /* refresh_fly_0001.png in Resources */ = {isa = PBXBuildFile; fileRef = B3AC6B071DFBBE44008F9482 /* refresh_fly_0001.png */; };
@@ -258,6 +259,7 @@
 		2E2C64AC3ABB0366D6A757B5 /* Pods-JSLivePlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSLivePlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JSLivePlayer/Pods-JSLivePlayer.debug.xcconfig"; sourceTree = "<group>"; };
 		8BB77D613D797108A3455342 /* libPods-JSLivePlayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JSLivePlayer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A6BE0A9D4974E316F7127A8 /* Pods-JSLivePlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSLivePlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-JSLivePlayer/Pods-JSLivePlayer.release.xcconfig"; sourceTree = "<group>"; };
+		B3537D341E98882200F7F2FF /* player_register_bak.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player_register_bak.png; sourceTree = "<group>"; };
 		B3AC6AE31DFADCBC008F9482 /* JSBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSBaseViewController.h; sourceTree = "<group>"; };
 		B3AC6AE41DFADCBC008F9482 /* JSBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSBaseViewController.m; sourceTree = "<group>"; };
 		B3AC6AE61DFB9437008F9482 /* JSBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSBaseNavigationController.h; sourceTree = "<group>"; };
@@ -765,6 +767,7 @@
 		B3B18E3B1E728B3600D8219C /* images */ = {
 			isa = PBXGroup;
 			children = (
+				B3537D341E98882200F7F2FF /* player_register_bak.png */,
 				B3B18FAA1E74DA4600D8219C /* liveControllerImgs */,
 				B3B18E3C1E728B3600D8219C /* 1.png */,
 				B3B18E3D1E728B3600D8219C /* 3.png */,
@@ -1326,6 +1329,7 @@
 				B3AC6B401DFBBE44008F9482 /* refresh_fly_0009.png in Resources */,
 				B3B18FBC1E74DA4600D8219C /* mg_room_btn_liao_h@3x.png in Resources */,
 				B3B18F1B1E728B3600D8219C /* rocket-fire-3.png in Resources */,
+				B3537D351E98882200F7F2FF /* player_register_bak.png in Resources */,
 				B3B18EE71E728B3600D8219C /* meteor_after_3.png in Resources */,
 				B3AC6B4B1DFBBE44008F9482 /* refresh_fly_0020.png in Resources */,
 				B3B18F291E728B3600D8219C /* yipitiezhi01.png in Resources */,
